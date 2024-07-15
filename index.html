@@ -15,11 +15,8 @@
        display: block;
       min-height: 100%;
        min-width: 100%;
-      height: auto;
-      width: auto;
        margin:0;
        padding:0;      
-       position: absolute;      
 }
 * {
 box-sizing: border-box;
@@ -28,20 +25,20 @@ body {
  
  }
 .page_wrapper {
-        position: absolute;
+        position: relative;
         top:0;
         border-right:10px solid red;
         padding: 0;
-        margin: auto;
+        margin: 0;
         height: auto;
         width:100%;
-        box-sizing:content-box;
+        box-sizing: border-box;
 border-bottom:10px solid green;
        border-right:10px solid green;
  }
 .page_container {
         border-right:10px solid blue;
-        box-sizing:content-box;
+        box-sizing: border-box;
         padding: 0;
         margin: auto;
         height: auto;
@@ -61,7 +58,7 @@ border-bottom:10px solid red;
     border-radius-top-right:20px;
     border-radius-top-left: 20px;
     height: 100%;
-    width: 100%;
+    width: 100vh;
 }
 header {
     position: absolute;
