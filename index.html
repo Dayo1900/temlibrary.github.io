@@ -10,11 +10,14 @@
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    
+    html {
+
+}
      html, body{
        display: block;
       min-height: 100%;
-       min-width: 100%;
+      height: auto;
+      width:100vw;
        margin:0;
        padding:0;      
 }
@@ -22,32 +25,31 @@
 box-sizing: border-box;
 }
 body {
- 
+width: 100%;
+ position: relative;
+ right:0;
  }
 .page_wrapper {
-        position: relative;
-        top:0;
-        border-right:10px solid red;
         padding: 0;
         margin: 0;
         height: auto;
         width:100%;
         box-sizing: border-box;
-border-bottom:10px solid green;
-       border-right:10px solid green;
+border-bottom:4px solid blue;
+       border-right:4px solid blue;
  }
 .page_container {
         border-right:10px solid blue;
         box-sizing: border-box;
         padding: 0;
-        margin: auto;
+        margin: 0;
         height: auto;
         width:100%;
        display: flex;
        flex-direction:column;
        align-content:space-between;
-border-bottom:10px solid red;
-       border-right:10px solid red;
+border-bottom:4px solid red;
+       border-right:4px solid red;
  }
 
 .header_iframe {
@@ -58,13 +60,12 @@ border-bottom:10px solid red;
     border-radius-top-right:20px;
     border-radius-top-left: 20px;
     height: 100%;
-    width: 100vh;
+    width: 100%;
 }
 header {
     position: absolute;
     top:4.5rem; 
     width: 100%;
-    margin:auto;
     height:4rem; 
 }
 iframe {
@@ -94,7 +95,6 @@ visibility: hidden;
 position: absolute;
 top:0;
 right:0;
-margin: auto;
 }
 #nav_wrapper:target {
 display:inline-block;
@@ -115,7 +115,6 @@ nav {
 }
 story-list_wrapper{
 padding-top:11.8rem;
-right: 1.5%;
 left: 1.5%;
 }
 #story-list_wrapper:target {
@@ -178,7 +177,6 @@ text-decoration: none;
 }
 .nav_link {
 display: block;
-margin: auto;
 border-bottom: 1px solid #39ac73;
 color: #0088cc;
 padding: 0.5em 0;
@@ -201,7 +199,6 @@ width: 100%;
 .close_menu {
 display: inline-block;
 padding: 0.2em;
-margin-right: 5rem;
 text-decoration: none;
 }
 .close_menu2 {
@@ -219,7 +216,6 @@ main {
     font-size: 18px;
     line-height: 1.2;
     height: auto;
-    margin: auto;
     width: 100%;
     word-spacing: 2px;
 }
@@ -341,9 +337,6 @@ footer {
       text-align: center;
       background-color:#e6f7ff;
       font-family: Tahoma, sans-serif;
-      position: absolute; 
-      bottom:0;
-      z-index:1;
 }
 input {
 height: auto;
@@ -359,15 +352,13 @@ width: 94%;
 }
 .menu  {
 float: right;
-padding: 0.5em;
+padding: 4px;
 font-size: 24px;
-background-image: url(/images/menu_list.svg);
 }
 .recent {
 float: left;
-padding: 0.5em;
+padding: 4px;
 font-size: 24px;
-background-image: url(/images/recent_stories.svg);
 }
 .recent:hover, .recent:active, .menu:hover, .menu:active, .close_menu:hover, .close_menu:active,  .close_menu2:hover, .close_menu2:active {
 border: 2px solid #99cc00;
@@ -421,6 +412,11 @@ page-link_div {
 
 }
 </style>
+<script>
+const D= new Date ();
+let Y= D.getFullYear();
+document.getElementById("year").innerHTML= Y;
+</script>
 </head>
 
 <body>
@@ -524,7 +520,6 @@ page-link_div {
 <i> fourth advert iframe</i>
 </div>
 </section>
-<a href="#page_two" class="button" style="padding:0.6em 2em; margin-top:4em;">Next</a>
 </article>
 </main>
 </div>
@@ -536,11 +531,5 @@ page-link_div {
    
 </div>
 </div>
-
-<script>
-const D= new Date ();
-let Y= D.getFullYear();
-document.getElementById("year").innerHTML= Y;
-</script>
 </body>
 </html>
