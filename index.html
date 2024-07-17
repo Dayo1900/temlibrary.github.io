@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,15 +20,13 @@
 * {
 box-sizing: border-box;
 }
-body {
-border-right:4px solid green;
- }
 .page_wrapper {
         padding: 0;
         margin: 0;
-        height: 100%;
+        height: auto;
         width:100%;
-        box-sizing: border-box;
+        display: flex;
+    flex-direction: column;
  }
 .page_container1 {
          box-sizing: border-box;
@@ -45,12 +41,10 @@ display: flex;
 border-bottom: 0.5px solid #39ac73;
  }
 .page_container2 {
-        box-sizing: border-box;
         padding: 0;
         margin: 0;
-        height: 100%;
+        height: auto;
         width:100%;
-        padding-top:11rem;
         position: relative;
  }
 .header_advert {
@@ -74,7 +68,7 @@ border-bottom: 0.5px solid #39ac73;
 header {
     margin-top:4.5rem; 
     width: 100%;
-    height:4.5rem; 
+    height:4.8rem; 
 }
 iframe {
     display: block;
@@ -100,12 +94,12 @@ border-radius-bottom-right:: outline: 270px;
 height: 1px;
 width: 1px;
 visibility: hidden;
-z-index:1;
 }
 #nav_wrapper:target {
 position: fixed;
 top:12rem;
 right:0;
+z-index:3;
 display: block;
 visibility:visible;
 width:60%;
@@ -124,13 +118,14 @@ position: fixed;
 top:0;
 padding-top:10rem;
 left: 1.5%;
+z-index:1;
 }
 #story-list_wrapper:target {
     display: inline-block;
     visibility: visible;
     width: 97%;
     height: auto;
-    padding-top:15.5rem;
+    padding-top:16rem;
     transition: padding-top 0.4s ease-out;
 }
 .list-container{
@@ -146,6 +141,9 @@ h1 {
   color:#009999; 
   padding-bottom:6px; 
 }
+h2 {
+  text-decoration:underline;         color:#0088cc;
+}
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
   text-align: center; 
@@ -156,7 +154,7 @@ color:#00cca3;
 }
 h5 {
 font-family: Tahoma, sans-serif;
-color:#00cca3;
+color:#009999; 
 }
 .current-story {
 display: flex;
@@ -233,7 +231,7 @@ aside {
     height: auto;
     width: 90%;
     margin: auto;
-    margin-bottom:1rem;
+    margin-top: 6rem;
 }
 .read {
     margin-top:9rem;
@@ -245,7 +243,7 @@ aside {
     height: 2rem;
     margin: auto;
     width: 96%;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.7rem;
 }
 .read_stories {
     background-color: #ecffb3;
@@ -320,10 +318,9 @@ article, section {
     text-decoration: none;
     vertical-align: middle;
 }
-.button {
+button {
     border: 1px solid #00ace6;
     border-radius: 4px;
-    display: block;
     color: #0088cc;
     padding: 1em 3em;
     font-family: Verdana, sans-serif;
@@ -331,14 +328,13 @@ article, section {
     margin:1.5em auto;
     background-color:#ccf2ff;
 }
-.button:hover, .button:active {
+button:hover, button:active, .next-page_link:hover, .next-page_link:active {
     outline: 2px solid #b3d9ff;
     outline-outset: 2px;
 }
 footer {
-       position: absolute;
-       bottom:0;
-      height: 90px; 
+      min-height: 90px; 
+      height: auto;
       width:100%;
       text-align: center;
       background-color:#e6f7ff;
@@ -371,7 +367,7 @@ border: 2px solid #99cc00;
 details {
 position: absolute;
 top:1rem;
-z-index:1;
+z-index:2;
 display: block;
 margin: auto;
 width: 98%;
@@ -389,6 +385,12 @@ font-weight: bold;
 }
 .thanks {
 text-align: center;
+}
+.left {
+float: left;
+}
+.right {
+float: right;
 }
 details>*:not(summary) {
 display: block;
@@ -413,8 +415,19 @@ height: auto;
 visibility: visible;
 display: block;
 }
-page-link_div {
-
+.next-page_link {
+    border: 1px solid #00ace6;
+    border-radius: 4px;
+    display: block;
+    color: #0088cc;
+    padding: 1em 0;
+    width:20%;
+    font-family: Verdana, sans-serif;
+    font-size:1em;
+    margin:1.5em auto;
+    background-color:#ccf2ff;
+    text-decoration:none;
+    text-align: center;
 }
 </style>
 <script>
@@ -448,9 +461,6 @@ document.getElementById("year").innerHTML= Y;
 
 <div class="page_container2">
 <div id="nav_wrapper">
-<div class="empty">
-<span>.</span>
-</div>
     <nav>
        <div class="first_link">
           <a class="close_menu" href="#"> <img width="20" height="20" src="https://img.icons8.com/color/48/000000/x-coordinate.png" alt="close"></a>
@@ -469,11 +479,11 @@ document.getElementById("year").innerHTML= Y;
     <details>
         <summary>Register</summary>
             <div class="register">
-<h2 style="text-decoration:underline; color:#0088cc;"> Hello </h2>
+<h2> Hello </h2>
                 <div id="thanks"></div>
                 <p>Submit your email to receive a list of stories once a month.</p>
                 <input id="email" type="email" name="email" placeholder="Your email" autocomplete="on">
-                <button class="button">Submit</button>
+                <button>Submit</button>
             </div>
     </details>
 
@@ -498,7 +508,7 @@ document.getElementById("year").innerHTML= Y;
 </aside>
 <main>
 <h1> Story Heading </h1>
-<article id="page_one" title="Page 1: story-title-here">
+<article id="page_1" title="Page 1: story-title-here">
 <section>
 <img class="story_picture" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on this page.</p>
@@ -507,7 +517,7 @@ document.getElementById("year").innerHTML= Y;
 </div>
 </section>
 <section>
-<h3> Optional Heading </h3>
+<h5> Optional Heading2 </h5>
 <img class="story_picture" src=" " alt="optional image/gif" title=" ">
 <p> This is the second paragraph on this page.</p>
 <div class="advert">
@@ -515,7 +525,7 @@ document.getElementById("year").innerHTML= Y;
 </div>
 </section>
 <section>
-<h3> Optional Heading </h3>
+<h5> Optional Heading3 </h5>
 <img class="story_picture" src=" " alt="optional image/gif" title=" ">
 <p> This is the third paragraph on this page.</p>
 <div class="advert">
@@ -523,7 +533,7 @@ document.getElementById("year").innerHTML= Y;
 </div>
 </section>
 <section>
-<h3> Optional Heading </h3>
+<h5> Optional Heading4 </h5>
 <img class="story_picture" src=" " alt="optional image/gif" title=" ">
 <p> This is the fourth paragraph on this page.</p>
 <div class="advert">
@@ -532,14 +542,21 @@ document.getElementById("year").innerHTML= Y;
 </section>
 </article>
 </main>
+<a href="page_2" class="next-page_link"> Next</a>
+</div>
 </div>
 
 <footer>
+<a target="_blank" href="https://icons8.com/icon/8153/align-justify">Align Justify</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
+
+<a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
+
+<a target="_blank" href="https://icons8.com/icon/13198/x-coordinate">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
   <div> <small>&#169;</small> <small id="year"></small>
 </div>
 </footer>
-   
 </div>
-</div>
+
+
 </body>
 </html>
