@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,25 +27,41 @@ border-right:4px solid green;
 .page_wrapper {
         padding: 0;
         margin: 0;
-        height: auto;
+        height: 100%;
         width:100%;
         box-sizing: border-box;
-border-bottom:4px solid blue;
-       border-right:4px solid blue;
  }
-.page_container {
+.page_container1 {
          box-sizing: border-box;
         padding: 0;
         margin: 0;
-        height: auto;
+        height: 11.5rem;
         width:100%;
-       display: flex;
-       flex-direction:column;
-       align-content:space-between;
-border-bottom:4px solid red;
-       border-right:4px solid red;
+position: relative;
+        z-index:2;
+display: flex;
+    flex-direction: column;
+border-bottom: 0.5px solid #39ac73;
  }
-
+.page_container2 {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width:100%;
+        padding-top:11rem;
+        position: relative;
+ }
+.header_advert {
+  position:fixed; 
+  top:0;
+  z-index:2;
+  margin: auto;
+  height:4.5rem;
+  width: 100%;
+  border:1px solid black;
+  background-color:#0088cc;
+}
 .header_iframe {
     border-style: double;
     border-width: 6px 0 0 0;
@@ -60,7 +75,7 @@ border-bottom:4px solid red;
 header {
     margin-top:4.5rem; 
     width: 100%;
-    height:4rem; 
+    height:4.5rem; 
 }
 iframe {
     display: block;
@@ -86,13 +101,12 @@ border-radius-bottom-right:: outline: 270px;
 height: 1px;
 width: 1px;
 visibility: hidden;
-margin-top:0;
-position: relative;
 }
 #nav_wrapper:target {
-float: right;
-display:inline-block;
-z-index:3;
+position: fixed;
+top:12rem;
+right:0;
+display: block;
 visibility:visible;
 width:60%;
 height: auto;
@@ -100,24 +114,24 @@ transition:width 0.6s ease-out;
 }
 nav {
     background-color: #ecffb3;
-    border-radius: 15px;
-    border-bottom-left-radius: 0;
+    border-top-left-radius: 15px;
     border-left: 0.5px solid #39ac73;
     height: auto;
-    margin-top: 9.2rem;
     width: 100%;
 }
-story-list_wrapper{
-padding-top:8rem;
+#story-list_wrapper{
+position: fixed;
+top:0;
+z-index:1;
+padding-top:10rem;
 left: 1.5%;
 }
 #story-list_wrapper:target {
     display: inline-block;
     visibility: visible;
-    z-index:2;
     width: 97%;
     height: auto;
-    padding-top:9.2rem;
+    padding-top:15.5rem;
     transition: padding-top 0.4s ease-out;
 }
 .list-container{
@@ -131,7 +145,7 @@ left: 1.5%;
 }
 h1 {
   color:#009999; 
-  padding-bottom:9px; 
+  padding-bottom:6px; 
 }
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
@@ -172,13 +186,13 @@ text-decoration: none;
 .nav_link {
 display: block;
 border-bottom: 1px solid #39ac73;
-color: #0088cc;
+color: #39ac73;
 padding: 0.5em 0;
 height: auto;
 width: 100%;
 text-decoration: none;
 font-family: Georgia, serif;
-font-weight: bold;
+font-weight: 2px;
 font-size: 1.2em;
 text-align: center; 
 }
@@ -199,7 +213,7 @@ text-decoration: none;
 display: inline-block;
 padding: 0.2em;
 position: absolute;
-top: 12.1rem;
+top: 15.1rem;
 left: 1.7rem;
 }
 .nav_link:hover, .nav_link:active {
@@ -217,23 +231,22 @@ aside {
     display: none;
 }
 .main_container {
-    margin-top: 18rem;
     height: auto;
     width: 90%;
     margin: auto;
     margin-bottom:1rem;
 }
 .read {
-     margin-top:9.1rem;
-     position: relative;
-     z-index: 4;
+    margin-top:9rem;
+    vertical-align: bottom;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: auto;
+    height: 2rem;
     margin: auto;
     width: 96%;
+    padding-bottom: 0.5rem;
 }
 .read_stories {
     background-color: #ecffb3;
@@ -331,6 +344,7 @@ footer {
       text-align: center;
       background-color:#e6f7ff;
       font-family: Tahoma, sans-serif;
+      border-top: 0.5px solid #0088cc;
 }
 input {
 height: auto;
@@ -347,25 +361,23 @@ width: 94%;
 .menu  {
 float: right;
 padding: 4px;
-font-size: 24px;
 }
 .recent {
 float: left;
 padding: 4px;
-font-size: 24px;
 }
 .recent:hover, .recent:active, .menu:hover, .menu:active, .close_menu:hover, .close_menu:active,  .close_menu2:hover, .close_menu2:active {
 border: 2px solid #99cc00;
 }
 details {
-margin-top:13.2rem;
-position: relative;
-z-index:1;
+position: absolute;
+top:1rem;
+z-index:2;
 display: block;
 margin: auto;
 width: 98%;
 height: auto;
-font-size:1em;
+font-size:1rem;
 }
 summary {
 padding: 0.5em;
@@ -415,9 +427,12 @@ document.getElementById("year").innerHTML= Y;
 
 <body>
   <div class="page_wrapper">
-        <div class="page_container">        
-<header>    <i></i>     </header>
+        <div class="page_container1">        
 
+<div class="header_advert">
+<i></i>
+</div>
+<header>    <i></i>     </header>
     <div class="read">
       <a class="recent"  href="#story-list_wrapper">
           <img width="25" height="25" src="https://img.icons8.com/color/48/000000/scroll.png" alt="Recent stories">
@@ -430,8 +445,13 @@ document.getElementById("year").innerHTML= Y;
  <img width="25" height="25" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="menu list">
   </a>
     </div>
+</div>
 
+<div class="page_container2">
 <div id="nav_wrapper">
+<div class="empty">
+<span>.</span>
+</div>
     <nav>
        <div class="first_link">
           <a class="close_menu" href="#"> <img width="12" height="12" src="https://img.icons8.com/color/48/000000/x-coordinate.png" alt="close"></a>
@@ -450,9 +470,9 @@ document.getElementById("year").innerHTML= Y;
     <details>
         <summary>Register</summary>
             <div class="register">
-<h2 style="text-align:center; color:#00cca3;  text-decoration: underline;"> Hello </h2>
+<h2 style="text-decoration:underline; color:#0088cc;"> Hello </h2>
                 <div id="thanks"></div>
-                <p>You can submit your email address to receive a list of stories every month.</p>
+                <p>Submit your email to receive a list of stories once a month.</p>
                 <input id="email" type="email" name="email" placeholder="Your email" autocomplete="on">
                 <button class="button">Submit</button>
             </div>
