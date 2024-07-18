@@ -1,3 +1,5 @@
+Testing
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -488,6 +490,7 @@ document.getElementById("year").innerHTML= Y;
                 <button>Submit</button>
             </div>
     </details>
+<div id="google_translate_element"></div>
 
 
    <div id="story-list_wrapper">
@@ -560,6 +563,17 @@ document.getElementById("year").innerHTML= Y;
 </footer>
 </div>
 
+
+<script type="text/javaScript"
+src="//translate.google.com/translate_a/element.js?
+cb= googleTranslateElementInit"></script>
+<script type="text/javaScript">
+function googleTranslateElementInit()
+{
+new google.translate.TranslateElement({ pageLanguage: 'en'},
+'google_translate_element');
+}
+</script>
 
 </body>
 </html>
