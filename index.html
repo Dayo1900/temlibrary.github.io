@@ -54,8 +54,6 @@ border-bottom: 0.5px solid #39ac73;
   margin: auto;
   height:5rem;
   width: 100%;
-  border:1px solid black;
-  background-color:#0088cc;
 }
 .header_iframe {
     border-style: double;
@@ -103,7 +101,7 @@ right:0;
 z-index:3;
 display: block;
 visibility:visible;
-width:50%;
+width:70%;
 height: 90vh;
 transition:width 0.6s ease-out;
 }
@@ -406,12 +404,12 @@ width: 90%;
 text-align: center;
 font-family: Niconne-Regular;
 } 
-#page_two, #page_three, #page_four {
+#page_1, #page_2, #page_3, #page_4{
 width: 1px;
 height: 1px;
 visibility: hidden;
 }
-#page_one:target, #page_two:target, #page_three:target, #page_four:target {
+#page_1:target, #page_2:target, #page_3:target, #page_4:target {
 width: 100%;
 height: auto;
 visibility: visible;
@@ -420,7 +418,7 @@ display: block;
 .next-page_link {
     border: 1px solid #00ace6;
     border-radius: 4px;
-    display: block;
+    display: inline-block;
     color:#00cca3;
     padding: 1em 0;
     width:35%;
@@ -433,6 +431,33 @@ display: block;
 }
 small {
 font-size:9px;
+}
+.page_number{
+border: 0.5px double #009999;
+padding:6px;
+border-radius: 360px;
+float:left;
+}
+.white_footer_div{
+width:75%
+height:auto;
+padding:6px;
+background-color: #ffffff;
+border-radius:30px;
+margin-bottom: 12px;
+}
+.share_story_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width:100%;
+    height:3rem;
+}
+.share_story_text{
+text-align: center;
+color:#0088cc;
+font-family: Georgia, serif;
 }
 </style>
 </head>
@@ -490,7 +515,7 @@ font-size:9px;
    <div id="story-list_wrapper">
    <a class="close_menu2" href="#"> <img width="25" height="25" src="https://img.icons8.com/color/48/000000/x-coordinate.png" alt="close"></a>
    <div class="list-container">
-<h3 style="color: #0088cc;"> Recent Stories </h3>
+<h2> Recent Stories </h2>
 <h5 id="story_list"> </h5>
 <div class="current-story">
 <img class="thumbnail" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
@@ -508,6 +533,7 @@ font-size:9px;
 <main>
 <h1> Story Heading </h1>
 <article id="page_1" title="Page 1: story-title-here">
+<small class="page_number"> Page 1</small>
 <section>
 <img class="story_picture" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on this page.</p>
@@ -539,18 +565,63 @@ font-size:9px;
 <i> fourth advert iframe</i>
 </div>
 </section>
-</article>
-</main>
 <a href="page_2" class="next-page_link"> Next</a>
+</article>
+
+<article id="page_2" title="Page 2: story-title-here">
+<small class="page_number"> Page 2</small>
+<section>
+<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<p>This is the first paragraph on this page.</p>
+<div class="advert">
+<i> first advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading2 </h4>
+<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<p> This is the second paragraph on this page.</p>
+<div class="advert">
+<i> second advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading3 </h4>
+<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<p> This is the third paragraph on this page.</p>
+<div class="advert">
+<i> third advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading4 </h4>
+<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<p> This is the fourth paragraph on this page.</p>
+<div class="advert">
+<i> fourth advert iframe</i>
+</div>
+</section>
+<div>
+<a href="page_3" class="next-page_link left" > Next</a>
+<a href="page_1" class="next-page_link right"> Back</a>
+</div>
+</article>
+
+</main>
 </div>
 </div>
 
 <footer>
+<div class="white_footer_div">
+<p class="share_story_text"> Share this story</p>
+<div class="share_story_div">
+</div>
+</div>
 <small>
 <a target="_blank" href="https://icons8.com/icon/8153/align-justify">Align Justify</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
 <a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
 <a target="_blank" href="https://icons8.com/icon/13198/x-coordinate">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br></small>
- <small id="year"> &#169;</small>
+ <small id="year"> Copyright </small>
 <script>
 document.getElementById("year").innerHTML=new Date().getFullYear();
 </script>
