@@ -3,13 +3,18 @@
 <head>
     <title>Story title</title>
     <meta charset="UTF-8">
-    <meta name="description" content="150-character summary of story.. set with keywords">
-    <meta name= "google-site-verification" content="60yguiaNxykxZ63G634MgLBlTDIpgfGGs0yDJtt8eXc">
+    <meta name="description koko ki "google-site-verification" content="60yguiaNxykxZ63G634MgLBlTDIpgfGGs0yDJtt8eXc">
     <meta name="keywords" content="list_keywords">
     <meta name="author" content="temlibrary">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="https://www.your-domain.com/your-page.html" /> <meta property="og:type" content="website" /> <meta property="og:title" content="Your Website Title" /> <meta property="og:description" content="Your description" /> <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>window.twttr = (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function(f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
+</script>
+<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+</script> 
+
 <style>
      html, body{
       min-height: 100%;
@@ -210,7 +215,7 @@ text-decoration: none;
 display: inline-block;
 padding: 0.2em;
 position: absolute;
-top: 16.6rem;
+top: 14.6rem;
 left: 1.7rem;
 }
 .nav_link:hover, .nav_link:active {
@@ -268,8 +273,15 @@ aside {
     width: 100%;
 }
 .story_picture {
+width: 96%;
+}
+.story_gif {
+width: 70%;
+}
+.story_picture, .story_gif{
     display: block;
-    width: 98%;
+    min-height:45px;
+    object-fit: contain;
     height: auto;
     margin: auto;
 }
@@ -404,12 +416,12 @@ width: 90%;
 text-align: center;
 font-family: Niconne-Regular;
 } 
-#page_1, #page_2, #page_3, #page_4{
+article:not(:target){
 width: 1px;
 height: 1px;
 visibility: hidden;
 }
-#page_1:target, #page_2:target, #page_3:target, #page_4:target {
+article:target {
 width: 100%;
 height: auto;
 visibility: visible;
@@ -439,17 +451,17 @@ border-radius: 360px;
 float:left;
 }
 .white_footer_div{
-width:75%
+width:60%;
 height:auto;
-padding:6px;
 background-color: #ffffff;
-border-radius:30px;
-margin-bottom: 12px;
+border-bottom-left-radius:30px;
+border-bottom-right-radius:30px;
+margin:0 auto 12px;
 }
 .share_story_div{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-evenly;
     width:100%;
     height:3rem;
@@ -458,6 +470,14 @@ margin-bottom: 12px;
 text-align: center;
 color:#0088cc;
 font-family: Georgia, serif;
+font-size:10px;
+margin-top4px;
+}
+.twitter-share-button, .fb-share-button, .share-button{
+margin-bottom:0.7rem;
+}
+.share-button{
+margin-bottom:0.2rem;
 }
 </style>
 </head>
@@ -472,14 +492,14 @@ font-family: Georgia, serif;
 <header>    <i></i>     </header>
     <div class="read">
       <a class="recent"  href="#story-list_wrapper">
-          <img width="25" height="25" src="https://img.icons8.com/color/48/000000/scroll.png" alt="Recent stories">
+          <img width="30" height="30" src="https://img.icons8.com/color/48/000000/scroll.png" alt="Recent stories">
     </a>
 
         <h5 class="read_stories">
             Read Stories
         </h5>
           <a class="menu" href="#nav_wrapper">
- <img width="25" height="25" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="menu list">
+ <img width="30" height="30" src="https://img.icons8.com/ios/50/228BE6/align-cell-content-center.png" alt="align-cell-content-center"/>
   </a>
     </div>
 </div>
@@ -488,7 +508,7 @@ font-family: Georgia, serif;
 <div id="nav_wrapper">
     <nav>
        <div class="first_link">
-          <a class="close_menu" href="#"> <img width="25" height="25" src="https://img.icons8.com/color/48/000000/x-coordinate.png" alt="close"></a>
+          <a class="close_menu" href="#"> <img width="60" height="60" src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"/>
 </div>
  <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children
 </a>
@@ -513,7 +533,8 @@ font-family: Georgia, serif;
     </details>
 
    <div id="story-list_wrapper">
-   <a class="close_menu2" href="#"> <img width="25" height="25" src="https://img.icons8.com/color/48/000000/x-coordinate.png" alt="close"></a>
+  <a class="close_menu2" href="#"> <img width="60" height="60" src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"/>
+</a>
    <div class="list-container">
 <h2> Recent Stories </h2>
 <h5 id="story_list"> </h5>
@@ -535,7 +556,7 @@ font-family: Georgia, serif;
 <article id="page_1" title="Page 1: story-title-here">
 <small class="page_number"> Page 1</small>
 <section>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on this page.</p>
 <div class="advert">
 <i> first advert iframe</i>
@@ -543,7 +564,7 @@ font-family: Georgia, serif;
 </section>
 <section>
 <h4> Optional Heading2 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on this page.</p>
 <div class="advert">
 <i> second advert iframe</i>
@@ -551,7 +572,7 @@ font-family: Georgia, serif;
 </section>
 <section>
 <h4> Optional Heading3 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on this page.</p>
 <div class="advert">
 <i> third advert iframe</i>
@@ -559,7 +580,7 @@ font-family: Georgia, serif;
 </section>
 <section>
 <h4> Optional Heading4 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on this page.</p>
 <div class="advert">
 <i> fourth advert iframe</i>
@@ -611,22 +632,50 @@ font-family: Georgia, serif;
 </div>
 </div>
 
+<div id="fb-root"></div>
 <footer>
 <div class="white_footer_div">
 <p class="share_story_text"> Share this story</p>
 <div class="share_story_div">
+
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="1st paragraph of the story here. . ." data-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-hashtags="keyword 1,keyword2,keyword3" data-via="temlibrary" data-related="twitterapi,twitter"> Tweet </a>
+
+<a class="share-button"  href="mail to:someone@example.com">
+<img width="32" height="32" src="https://img.icons8.com/ios/50/000000/new-post--v1.png" alt="email icon"/>
+</a>
+
+<div style="width:4rem; height:2rem;">
+<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-share-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-comment="First paragraph"></script>
+</div>
+
+<a class="share-button"  href="whatsapp://send?text=https://dayo1900.github.io/temlibrary.github.io/#page_1 <br> '1 or 2 sentences. . .' ">
+<img width="32" height="32" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon"/>
+</a>
+
+<span class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"> </span>
+
 </div>
 </div>
 <small>
-<a target="_blank" href="https://icons8.com/icon/8153/align-justify">Align Justify</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
+<a  href="https://icons8.com/icon/12580/email">Email</a> icon by <a href="https://icons8.com">Icons8</a><br>
+<a  href="https://icons8.com/icon/UBjTW632xuVM/whatsapp">Whatsapp</a> icon by <a href="https://icons8.com">Icons8</a><br>
+<a href="https://icons8.com/icon/56059/align-text-center">Align Text Center</a> icon by <a href="https://icons8.com">Icons8</a>
+<br>
 <a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
-<a target="_blank" href="https://icons8.com/icon/13198/x-coordinate">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br></small>
- <small id="year"> Copyright </small>
+<a target="_blank" href="https://img.icons8.com/ultraviolet/40/close-window--v1.png" alt="close-window--v1">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br></small>
+  <small>
+     <span> Copyright</span> <span id="year"></span>
+ </small>
 <script>
 document.getElementById("year").innerHTML=new Date().getFullYear();
 </script>
 </footer>
 </div>
+<script type="text/javascript" src="twitter_widget.js"></script>
+<script type="text/javascript" src="facebook_sdk.js"></script>
+<script type="text/javascript" src="/js/email_register.js"></script>
+<script type="text/javascript" src="/js/telegram_code.js"></script>
 
-<script type="text/javascript" src="/js/email_register.js"></script></body>
+
+</body>
 </html>
