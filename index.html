@@ -12,12 +12,12 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>window.twttr = (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function(f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
 </script>
+
 <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
 </script> 
 
 <style>
-     html, body{
-      min-height: 100%;
+     html, body {
       height: auto;
       width:100vw;
        margin:0;
@@ -27,11 +27,11 @@
 box-sizing: border-box;
 }
 .page_wrapper {
-        padding: 0;
-        margin: 0;
-        height: auto;
+        padding:0;
+        margin:0;
+        height:auto;
         width:100%;
-        display: flex;
+        display:flex;
     flex-direction: column;
  }
 .page_container1 {
@@ -51,7 +51,7 @@ border-bottom: 0.5px solid #39ac73;
         margin: 0;
         height: auto;
         width:100%;
-        position: relative;
+        position:relative;
  }
 .header_advert {
   position:fixed; 
@@ -100,11 +100,11 @@ width: 1px;
 visibility: hidden;
 }
 #nav_wrapper:target {
+display: block;
 position: fixed;
 top:5rem;
 right:0;
 z-index:3;
-display: block;
 visibility:visible;
 width:56%;
 height: 75vh;
@@ -120,20 +120,22 @@ nav {
 #story-list_wrapper{
 position: fixed;
 top:0;
+left:6%;
 padding-top:12.5rem;
-left: 1.5%;
 z-index:1;
 }
 #story-list_wrapper:target {
-    display: inline-block;
+    display: block;
     visibility: visible;
-    width: 87%;
+    width: 88%;
     height: auto;
     padding-top:19.5rem;
     transition: padding-top 0.4s ease-out;
 }
 .list-container{
     min-height:100px;
+    max-height: 90vh;
+    overflow-y: auto;
     width:100%;
     background-color:#d6f5f5; 
     border:1px solid #39ac73;
@@ -166,7 +168,7 @@ flex-direction: row;
 justify-content: space-evenly;
 align-items: center;
 width:100%;
-height: 54px;
+height: 45px;
 padding: 3px;
 border-top: 1px solid #39ac73;
 }
@@ -215,7 +217,7 @@ text-decoration: none;
 display: inline-block;
 padding: 0.2em;
 position: absolute;
-top: 18.6rem;
+top: 18rem;
 left: 1.7rem;
 }
 .nav_link:hover, .nav_link:active {
@@ -223,14 +225,17 @@ left: 1.7rem;
 }
 main {
     font-family: Montserrat-Regular;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.2;
     height: auto;
     width: 100%;
-    word-spacing: 2px;
+    word-spacing: 1px;
+    display: flex;
+    flex-direction:column;
+    align-content: space-around;
 }
-aside {
-    display: none;
+aside.left, aside.right{
+    display:none;
 }
 .main_container {
     height: auto;
@@ -283,7 +288,7 @@ width: 70%;
     min-height:45px;
     object-fit: contain;
     height: auto;
-    margin: auto;
+    margin: 1em auto;
 }
 .youtube_link { 
 border: 1px solid #248f24;
@@ -315,7 +320,7 @@ width: 100%;
 .advert {
     height: auto;
     margin: 1em auto;
-    width: 100%;
+    width: 90%;
 }
 .footer_iframe {
     font-family: Montserrat-Regular;
@@ -333,7 +338,7 @@ button {
     margin:1.5em auto;
     background-color:#ccf2ff;
 }
-button:hover, button:active, .next-page_link:hover, .next-page_link:active {
+button:hover, button:active {
     outline: 2px solid #b3d9ff;
     outline-outset: 2px;
 }
@@ -370,7 +375,7 @@ padding: 4px;
 border: 2px solid #99cc00;
 }
 details {
-position: absolute;
+position:absolute;
 top:1rem;
 z-index:2;
 display: block;
@@ -410,30 +415,22 @@ width: 90%;
 text-align: center;
 font-family: Niconne-Regular;
 } 
-#page_1, #page_2, #page_3, #page_4{
-width: 1px;
-height: 1px;
-visibility: hidden;
+.not_show{
+display: none;
 }
-#page_1:target, #page_2:target, #page_3:target, #page_4:target {
+.show {
 width: 100%;
 height: auto;
 visibility: visible;
 display: block;
 }
-.next-page_link {
-    border: 1px solid #00ace6;
-    border-radius: 4px;
-    display: inline-block;
-    color:#00cca3;
-    padding: 1em 0;
-    width:35%;
-    font-family: Verdana, sans-serif;
-    font-size:1em;
-    margin:1.5em auto;
-    background-color:#ccf2ff;
-    text-decoration:none;
-    text-align: center;
+.button_row {
+    width:80%;
+    height:auto;
+    margin:auto;
+   display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
 }
 small {
 font-size:9px;
@@ -465,10 +462,12 @@ text-align: center;
 color:#0088cc;
 font-family: Georgia, serif;
 font-size:10px;
-margin-top:1rem;
+padding-top:1rem;
 }
-.twitter-share-button, .fb-share-button, .share-button{
-margin-bottom:0.7rem;
+.twitter-share-button, .fb-share-button{
+display: inline-block;
+width:100%;
+height: auto;
 }
 .share-button{
 margin-bottom:0.2rem;
@@ -488,12 +487,12 @@ margin-bottom:0.2rem;
       <a class="recent"  href="#story-list_wrapper">
           <img width="30" height="30" src="https://img.icons8.com/color/48/000000/scroll.png" alt="Recent stories">
     </a>
-
         <h5 class="read_stories">
             Read Stories
         </h5>
           <a class="menu" href="#nav_wrapper">
  <img width="30" height="30" src="https://img.icons8.com/windows/32/228BE6/align-justify.png" alt="menu"/>
+</a>
     </div>
 </div>
 
@@ -501,7 +500,8 @@ margin-bottom:0.2rem;
 <div id="nav_wrapper">
     <nav>
        <div class="first_link">
-          <a class="close_menu" href="#"> <img width="30" height="30" src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"/>
+<a class="close_menu" href="#">
+         <img width="30" height="30" " src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"></a>
 </div>
  <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children
 </a>
@@ -544,13 +544,18 @@ margin-bottom:0.2rem;
    <i class="can_display"></i>
     <i class="can_display" style="visibility:visible; height:60%;"></i>
 </aside>
-<main>
+<aside class="right">
+   <i class="can_display"></i>
+    <i class="can_display" style="visibility:visible; height:60%;"></i>
+</aside>
 <h1> Story Heading </h1>
-<article id="page_1" title="Page 1: story-title-here">
-<small class="page_number"> Page 1</small>
+<main>
+
+<article class="show" id="page_1" title="Page 1: story-title-here">
+<small class="page_number"> Page 1</small><br><br>
 <section>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
-<p>This is the first paragraph on this page.</p>
+<p>This is the first paragraph on page 1.</p>
 <div class="advert">
 <i> first advert iframe</i>
 </div>
@@ -558,7 +563,7 @@ margin-bottom:0.2rem;
 <section>
 <h4> Optional Heading2 </h4>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
-<p> This is the second paragraph on this page.</p>
+<p> This is the second paragraph on page 1.</p>
 <div class="advert">
 <i> second advert iframe</i>
 </div>
@@ -566,7 +571,7 @@ margin-bottom:0.2rem;
 <section>
 <h4> Optional Heading3 </h4>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
-<p> This is the third paragraph on this page.</p>
+<p> This is the third paragraph on page 1.</p>
 <div class="advert">
 <i> third advert iframe</i>
 </div>
@@ -574,94 +579,60 @@ margin-bottom:0.2rem;
 <section>
 <h4> Optional Heading4 </h4>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
-<p> This is the fourth paragraph on this page.</p>
+<p> This is the fourth paragraph on page 1.</p>
 <div class="advert">
 <i> fourth advert iframe</i>
 </div>
 </section>
-<a href="page_2" class="next-page_link"> Next</a>
 </article>
-
-<article id="page_2" title="Page 2: story-title-here">
-<small class="page_number"> Page 2</small>
-<section>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
-<p>This is the first paragraph on this page.</p>
-<div class="advert">
-<i> first advert iframe</i>
+<div class="button_row">
+<button onclick="pg1( )" style="font-size:3em; padding:0.3em 0.8em;"> 1</button>
+<button onclick="pg2( )" style="font-size:3em; padding:0.3em 0.8em;"> 2</button>
+<button onclick="pg3( )" style="font-size:3em; padding:0.3em 0.8em;"> 3</button>
+<button onclick="pg4( )" style="font-size:3em; padding:0.3em 0.8em;"> 4</button>
 </div>
-</section>
-<section>
-<h4> Optional Heading2 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
-<p> This is the second paragraph on this page.</p>
-<div class="advert">
-<i> second advert iframe</i>
-</div>
-</section>
-<section>
-<h4> Optional Heading3 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
-<p> This is the third paragraph on this page.</p>
-<div class="advert">
-<i> third advert iframe</i>
-</div>
-</section>
-<section>
-<h4> Optional Heading4 </h4>
-<img class="story_picture" src=" " alt="optional image/gif" title=" ">
-<p> This is the fourth paragraph on this page.</p>
-<div class="advert">
-<i> fourth advert iframe</i>
-</div>
-</section>
-<div>
-<a href="page_3" class="next-page_link left" > Next</a>
-<a href="page_1" class="next-page_link right"> Back</a>
-</div>
-</article>
-
 </main>
+<br> <br><br>
 </div>
 </div>
 
-<div id="fb-root"></div>
+
 <footer>
 <div class="white_footer_div">
 <p class="share_story_text"> Share this story</p>
 <div class="share_story_div">
 
-<div style="width:4rem; height:2rem;">
+<div style="width:4rem; height:100%; margin-bottom:0.4rem;">
 <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="1st paragraph of the story here. . ." data-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-hashtags="keyword 1,keyword2,keyword3" data-via="temlibrary" data-related="twitterapi,twitter"> Tweet </a>
 </div>
 
 <a class="share-button"  href="mail to:someone@example.com">
-<img width="32" height="32" src="https://img.icons8.com/ios/50/000000/new-post--v1.png" alt="email icon"/>
+<img width="32" height="100%" src="https://img.icons8.com/ios/50/000000/new-post--v1.png" alt="email icon"/>
 </a>
 
-<div style="width:4rem; height:2rem;">
+<div style="width:4rem; height:100%;">
 <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-share-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-comment="First paragraph"></script>
 </div>
 
-<a class="share-button"  href="whatsapp://send?text=https://dayo1900.github.io/temlibrary.github.io/#page_1 <br> '1 or 2 sentences. . .' ">
-<img width="32" height="32" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon"/>
+<a class="share-button"  href="whatsapp://send?text=https://dayo1900.github.io/temlibrary.github.io/#page_1">
+<img width="32" height="100%" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon">
 </a>
 
-<div style="width:4rem; height:2rem;">
+<div id="fb-root"></div>
+<div style="width:4rem; height:100%;">
 <span class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"> </span>
 </div>
-
 </div>
 </div>
-<small>
-<a  href="https://icons8.com/icon/12580/email">Email</a> icon by <a href="https://icons8.com">Icons8</a><br>
-<a  href="https://icons8.com/icon/UBjTW632xuVM/whatsapp">Whatsapp</a> icon by <a href="https://icons8.com">Icons8</a><br>
-<a  href="https://icons8.com/icon/15014/align-justify">Align Justify</a> icon by <a href="https://icons8.com">Icons8</a>
 <br>
+<small>
+<a  href="https://icons8.com/icon/12580/email">Email</a> icon by <a href="https://icons8.com">Icons8</a>,   
+<a  href="https://icons8.com/icon/UBjTW632xuVM/whatsapp">Whatsapp</a> icon by <a href="https://icons8.com">Icons8</a>,   <a target="_blank" href="https://img.icons8.com/ultraviolet/40/close-window--v1.png" alt="close-window--v1">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>,  <br>
+<a  href="https://icons8.com/icon/15014/align-justify">Align Justify</a> icon by <a href="https://icons8.com">Icons8</a>,  
 <a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
-<a target="_blank" href="https://img.icons8.com/ultraviolet/40/close-window--v1.png" alt="close-window--v1">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br></small>
+<br></small><br>
   <small>
-     <span> Copyright</span> <span id="year"></span>
+     <span> Copyright &#169; </span> <span id="year"></span>
  </small>
 <script>
 document.getElementById("year").innerHTML=new Date().getFullYear();
@@ -670,8 +641,8 @@ document.getElementById("year").innerHTML=new Date().getFullYear();
 </div>
 <script type="text/javascript" src="twitter_widget.js"></script>
 <script type="text/javascript" src="facebook_sdk.js"></script>
-<script type="text/javascript" src="/js/email_register.js"></script>
-<script type="text/javascript" src="/js/telegram_code.js"></script>
+<script type="text/javascript" src="email_register.js"></script>
+<script type="text/javascript" src="change_page.js"></script>
 
 
 </body>
