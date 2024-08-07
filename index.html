@@ -8,35 +8,38 @@
     <meta name="author" content="temlibrary">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
- <meta property="og:type" content="website" /> 
-<meta property="og:title" content="Your Website Title" /> <meta property="og:description" content="Your description" />
-<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>window.twttr = (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {}; if (d.getElementById(id)) return t; js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); t._e = []; t.ready = function(f) { t._e.push(f); }; return t; }(document, "script", "twitter-wjs"));
-</script>
-
-<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
-</script> 
-
+    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type" content="website" /> 
+    <meta property="og:title" content="Your Website Title" /> <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/style699px.css">
 <style>
-     html, body {
-      height: auto;
+html, body {
+      height:auto;
       width:100vw;
        margin:0;
        padding:0;      
 }
+@media screen and (prefers-color-scheme: dark) { body {
+       background-color: black !important; 
+       color: white !important;
+ } }
+@media screen and (prefers-reduced-motion: reduce) { * {
+       transition-duration: 0.001ms !important; 
+} }
+
 * {
 box-sizing: border-box;
 }
 .page_wrapper {
         padding:0;
         margin:0;
+        position:absolute;
         height:auto;
         width:100%;
         display:flex;
-    flex-direction: column;
+        flex-direction: column;
  }
 .page_container1 {
          box-sizing: border-box;
@@ -62,19 +65,17 @@ border-bottom: 0.5px solid #39ac73;
   height:5rem;
   width: 100%;
 }
-.header_iframe {
-    border-style: double;
-    border-width: 6px 0 0 0;
-    border-color:#0088cc;
-    border-radius-top-right:20px;
-    border-radius-top-left: 20px;
-    height: 100%;
-    width: 100%;
-}
 header {
-    margin-top:5.5rem; 
-    width: 100%;
-    height:6.5rem; 
+    margin-top:6.5rem; 
+    width: 60%;
+    height: auto; 
+    margin: auto;
+    background-color:#ebfafa;
+    border-style: double;
+    border-width: 0.5px 0 3px 0;
+    border-color:#2eb8b8;
+    border-radius:50%;
+  
 }
 iframe {
     display: block;
@@ -83,18 +84,11 @@ iframe {
     height: auto;
 }
 .tem {
-    background-color: #ecffb3;
-    border-style: none double double double;
-    border-width: 0 4px 4px 4px;
-    border-color: #0088cc;
-    color: #0088cc;
-    border-radius-bottom-right: 270px;
-    border-radius-bottom-left: 270px;
-outline: 3px solid #ecffb3;
-border-radius-bottom-right:: outline: 270px;
-    border-radius-bottom-left:: outline: 270px;
-    height: 70%;
-    width: 80%; 
+   color:#145252; 
+   font-size:20px;
+   font-family: Script-MT bold;
+   letter-spacing:2px;
+  text-align: center;
 }
 #nav_wrapper, #story-list_wrapper{
 height: 1px;
@@ -109,7 +103,10 @@ z-index:3;
 visibility:visible;
 width:56%;
 height: 88vh;
-transition:width 0.6s ease-in-out;
+ -webkit-transition:width 0.6s ease;
+    -moz-transition:width 0.6s ease;
+   -o-transition:width 0.6s ease;
+transition:width 0.6s ease;
 }
 nav {
     background-color:#ccffcc;
@@ -130,13 +127,15 @@ z-index:1;
     visibility: visible;
     width: 88%;
     height: auto;
-    padding-top:17.5rem;
-    transition: padding-top 0.4s ease-out;
+    padding-top:19rem;
+    -webkit-transition: padding-top 0.4s ease;
+    -moz-transition: padding-top 0.4s ease;
+   -o-transition: padding-top 0.4s ease;
+    transition: padding-top 0.4s ease;
 }
 .list-container{
     min-height:100px;
-    max-height: 90vh;
-    overflow-y: auto;
+    height:auto;
     width:100%;
     background-color:#d6f5f5; 
     border:1px solid #39ac73;
@@ -218,7 +217,7 @@ text-decoration: none;
 display: inline-block;
 padding: 0.2em;
 position: absolute;
-top: 16rem;
+top: 17.5rem;
 left: 1.7rem;
 }
 .nav_link:hover, .nav_link:active {
@@ -373,7 +372,7 @@ float: left;
 padding: 4px;
 }
 .recent:hover, .recent:active, .menu:hover, .menu:active, .close_menu:hover, .close_menu:active,  .close_menu2:hover, .close_menu2:active {
-border: 2px solid #99cc00;
+border: 0.8px solid #99cc00;
 }
 details {
 position:absolute;
@@ -424,6 +423,7 @@ width: 100%;
 height: auto;
 visibility: visible;
 display: block;
+margin: auto;
 }
 .button_row {
     width:80%;
@@ -436,11 +436,17 @@ display: block;
 small {
 font-size:9px;
 }
-.page_number{
-border: 0.5px double #009999;
+small.page_number{
+border: 0.8px double #009999;
 padding:6px;
 border-radius: 360px;
 float:left;
+}
+button.page_number{
+padding:4px 7px;
+}
+.page_button{
+outline:3px solid #ccffcc;
 }
 .white_footer_div{
 width:86%;
@@ -465,16 +471,18 @@ font-family: Georgia, serif;
 font-size:10px;
 padding-top:1rem;
 }
-.twitter-share-button, .fb-share-button{
-display: inline-block;
-width:100%;
-height: auto;
+.icon {
+    position: relative;
+    width:30px;
+    height:30px;
 }
-.share-button{
-margin-bottom:0.2rem;
+img.icon{
+    position: absolute;
+    top:0;
+    display: inline-block;
 }
 </style>
-</head>
+ </head>
 
 <body>
   <div class="page_wrapper">
@@ -483,16 +491,18 @@ margin-bottom:0.2rem;
 <div class="header_advert">
 <i></i>
 </div>
-<header>    <i></i>     </header>
+<header>   
+ <p class="tem">T&#232;m Library</p>     
+</header>
     <div class="read">
       <a class="recent"  href="#story-list_wrapper">
-          <img width="30" height="30" src="https://img.icons8.com/color/48/000000/scroll.png" alt="Recent stories">
+          <img width="30" height="30" src="/icons_fonts/scroll_icon.png" alt="Recent stories">
     </a>
         <h5 class="read_stories">
             Read Stories
         </h5>
           <a class="menu" href="#nav_wrapper">
- <img width="30" height="30" src="https://img.icons8.com/windows/32/228BE6/align-justify.png" alt="menu"/>
+<img width="30" height="30" src="/icons_fonts/menu_icon.png" alt="menu"/>
 </a>
     </div>
 </div>
@@ -502,16 +512,12 @@ margin-bottom:0.2rem;
     <nav>
        <div class="first_link">
 <a class="close_menu" href="#">
-         <img width="30" height="30" " src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"></a>
+         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
 </div>
- <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children
-</a>
-        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General
-</a>
-        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian
-</a>
-  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News
-</a>
+ <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
+        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
+        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
+  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
     </nav>
 </div>
 
@@ -527,8 +533,7 @@ margin-bottom:0.2rem;
     </details>
 
    <div id="story-list_wrapper">
-  <a class="close_menu2" href="#"> <img width="30" height="30" src="https://img.icons8.com/sf-black/64/228BE6/cancel.png" alt="cancel"/>
-</a>
+  <a class="close_menu2" href="#"> <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"/></a>
    <div class="list-container">
 <h2> Recent Stories </h2>
 <h5 id="story_list"> </h5>
@@ -543,11 +548,11 @@ margin-bottom:0.2rem;
 <div class="main_container">
   <aside class="left">
    <i class="can_display"></i>
-    <i class="can_display" style="visibility:visible; height:60%;"></i>
+    <i class="can_display"></i>
 </aside>
 <aside class="right">
    <i class="can_display"></i>
-    <i class="can_display" style="visibility:visible; height:60%;"></i>
+    <i class="can_display"></i>
 </aside>
 <h1> Story Heading </h1>
 <main>
@@ -586,14 +591,86 @@ margin-bottom:0.2rem;
 </div>
 </section>
 </article>
+
+<article class="not_show" id="page_2" title="Page 2: story-title-here">
+<small class="page_number"> Page 2</small><br><br>
+<section>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
+<p>This is the first paragraph on page 2.</p>
+<div class="advert">
+<i> first advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading2 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the second paragraph on page 2.</p>
+<div class="advert">
+<i> second advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading3 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the third paragraph on page 2.</p>
+<div class="advert">
+<i> third advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading4 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the fourth paragraph on page 2.</p>
+<div class="advert">
+<i> fourth advert iframe</i>
+</div>
+</section>
+</article>
+
+<article class="not_show" id="page_3" title="Page 3: story-title-here">
+<small class="page_number"> Page 3</small><br><br>
+<section>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
+<p>This is the first paragraph on page 3.</p>
+<div class="advert">
+<i> first advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading2 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the second paragraph on page 3.</p>
+<div class="advert">
+<i> second advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading3 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the third paragraph on page 3.</p>
+<div class="advert">
+<i> third advert iframe</i>
+</div>
+</section>
+<section>
+<h4> Optional Heading4 </h4>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the fourth paragraph on page 3.</p>
+<div class="advert">
+<i> fourth advert iframe</i>
+</div>
+</section>
+</article>
+
+
 <div class="button_row">
-<button onclick="pg1( )" style="font-size:14px; padding:7px;"> 1</button>
-<button onclick="pg2( )" style="font-size:14px; padding:7px;"> 2</button>
-<button onclick="pg3( )" style="font-size:14px; padding:7px;"> 3</button>
-<button onclick="pg4( )" style="font-size:14px; padding:7px;"> 4</button>
+<button onclick="pg1()" class="page_number" id="btn1"> 1</button>
+<button onclick="pg2()" class="page_number" id="btn2"> 2</button>
+<button onclick="pg3()" class="page_number" id="btn3"> 3</button>
+<button onclick="pg4()" class="page_number" id="btn4"> 4</button>
 </div>
 </main>
-<br> <br><br>
+<br><br><br>
 </div>
 </div>
 
@@ -603,48 +680,105 @@ margin-bottom:0.2rem;
 <p class="share_story_text"> Share this story</p>
 <div class="share_story_div">
 
-<div style="width:4rem; height:100%; margin-bottom:0.4rem;">
-<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="1st paragraph of the story here. . ." data-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-hashtags="keyword 1,keyword2,keyword3" data-via="temlibrary" data-related="twitterapi,twitter"> Tweet </a>
-</div>
-
-<a class="share-button"  href="mail to:someone@example.com">
-<img width="32" height="100%" src="https://img.icons8.com/ios/50/000000/new-post--v1.png" alt="email icon"/>
+<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-text="1st paragraph of the story here. . ." data-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-hashtags="keyword 1,keyword2,keyword3" data-via="temlibrary" data-related="twitterapi,twitter">
+<img width="30" height="30" id="twt" src="/icons_fonts/twitter_icon.png" alt="twitter">
 </a>
-
-<div style="width:4rem; height:100%;">
-<script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-share-url="https://dayo1900.github.io/temlibrary.github.io/#page_1" data-comment="First paragraph"></script>
-</div>
-
-<a class="share-button"  href="whatsapp://send?text=https://dayo1900.github.io/temlibrary.github.io/#page_1">
-<img width="32" height="100%" src="https://img.icons8.com/external-justicon-flat-justicon/64/external-whatsapp-social-media-justicon-flat-justicon.png" alt="external-whatsapp-social-media-justicon-flat-justicon">
+<img width="30" height="30" src="/icons_fonts/pinterest_icon.png" alt="pinterest">
+<a  href="mailto:someone@example.com?&subject=Story Title
+&body= Hello,<br>
+Please visit the link below to read the story.<br>
+It's interesting.<br><br>
+https://dayo1900.github.io/temlibrary.github.io/#page_1<br>Cheers.">
+<img width="30" height="20" src="/icons_fonts/email_icon.png" alt="email">
 </a>
-
-<div id="fb-root"></div>
-<div style="width:4rem; height:100%;">
-<span class="fb-share-button" data-href="https://www.your-domain.com/your-page.html" data-layout="button_count"> </span>
-</div>
+<a  href="whatsapp://send?text=https://dayo1900.github.io/temlibrary.github.io/#page_1">
+<img width="30" height="30" src="/icons_fonts/whatsapp_icon.png" alt="whatsapp">
+</a>
+<img id="ogBtn" width="30" height="30" src="/icons_fonts/facebook_icon.png" onclick="fb_share()">
+<img width="30" height="30" src="/icons_fonts/telegram_ic
 </div>
 </div>
 <br>
 <small>
-<a  href="https://icons8.com/icon/12580/email">Email</a> icon by <a href="https://icons8.com">Icons8</a>,   
-<a  href="https://icons8.com/icon/UBjTW632xuVM/whatsapp">Whatsapp</a> icon by <a href="https://icons8.com">Icons8</a>,   <a target="_blank" href="https://img.icons8.com/ultraviolet/40/close-window--v1.png" alt="close-window--v1">X</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>,  <br>
-<a  href="https://icons8.com/icon/15014/align-justify">Align Justify</a> icon by <a href="https://icons8.com">Icons8</a>,  
-<a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br>
-<br></small><br>
+<a target="_blank" href="https://icons8.com/icon/EowVjORkxmzu/message-read">Message Read</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>,
+<a  href="https://icons8.com/icon/118497/facebook">Facebook</a> icon by <a href="https://icons8.com">Icons8</a>, <a target="_blank" href="https://icons8.com/icon/ClbD5JTFM7FA/twitterx">Twitter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>, <a target="_blank" href="https://icons8.com/icon/63676/pinterest">Pinterest</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>, 
+<a target="_blank" href="https://icons8.com/icon/16713/whatsapp">WhatsApp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>,   <br>
+<a  href="https://icons8.com/icon/ZeuiKoe7w37m/cancel">Cancel</a> icon by <a href="https://icons8.com">Icons8</a>, 
+<a  href="https://icons8.com/icon/uPyvV9qxnXJm/menu">Menu</a> icon by <a href="https://icons8.com">Icons8</a>,  
+<a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  <br>
+</small><br>
   <small>
-     <span> Copyright &#169; </span> <span id="year"></span>
+     <span> &#169; </span> <span id="year"></span> 
+<span> T&#232;m Library</span>
  </small>
 <script>
 document.getElementById("year").innerHTML=new Date().getFullYear();
 </script>
 </footer>
 </div>
-<script type="text/javascript" src="twitter_widget.js"></script>
-<script type="text/javascript" src="facebook_sdk.js"></script>
-<script type="text/javascript" src="email_register.js"></script>
-<script type="text/javascript" src="change_page.js"></script>
 
+<script type="text/javascript">
+window.twttr = (function(d, s, id) { 
+    var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
+    if (d.getElementById(id)) return t; 
+    js = document.querySelector('#twt'); 
+    js.id = id; 
+    js.src = "https://platform.twitter.com/widgets.js"; ; 
+    fjs.parentNode.insertBefore(js, fjs); 
+    t._e = []; 
+    t.ready = function(f) {t._e.push(f);}; 
+    return t; 
+    }(document, "script", "twitter-wjs"));
+</script>
+<script type="text/javascript">
+function fb_share() {
+document.getElementById('ogBtn').onclick = function() {
+  FB.ui({
+    display: 'popup',
+    method: 'share_open_graph',
+    action_type: 'og.likes',
+    action_properties: JSON.stringify({
+        object:'https://developers.facebook.com/docs/',,
+    })
+  }, function(response){});
+}
+}
+</script>
+<script type="text/javascript" src="/js/email_register.js"></script>
+<script type="text/javascript">
+function pg1( ) {
+var page=document.querySelector(".show");
+var page1=document.querySelector("#page_1");
+page.setAttribute( "class", "not_show");
+page1.setAttribute( "class", "show");
+ var last_page=document.querySelector(".page_button");
+var this_page=document.querySelector("#btn1");
+last_page.setAttribute("class", "page_number");
+this_page.setAttribute("class", "page_number page_button");
+}
 
+function pg2( ) {
+var page=document.querySelector(".show");
+var page2=document.querySelector("#page_2");
+page.setAttribute( "class", "not_show");
+page2.setAttribute( "class", "show");
+    var last_page=document.querySelector(".page_button");
+var this_page=document.querySelector("#btn2");
+last_page.setAttribute("class", "page_number");
+this_page.setAttribute("class", "page_number page_button");
+}
+
+function pg3( ) {
+var page=document.querySelector(".show");
+var page3=document.querySelector("#page_3");
+page.setAttribute( "class", "not_show");
+page3.setAttribute( "class", "show");
+ var last_page=document.querySelector(".page_button");
+var this_page=document.querySelector("#btn3");
+last_page.setAttribute("class", "page_number");
+this_page.setAttribute("class", "page_number page_button");
+}
+</script>
 </body>
 </html>
