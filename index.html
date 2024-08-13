@@ -1,4 +1,3 @@
-Test
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +24,11 @@ Test
   <style>
 html, body {
 	height: auto;
-	width: 100vw;
+	width: 100%;
 	margin: 0;
 	padding: 0;
+	overflow-x:hidden;
+	overflow-y:hidden;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -50,7 +51,6 @@ html, body {
 .page_wrapper {
 	padding: 0;
 	margin: 0;
-	position: absolute;
 	height: auto;
 	width: 100%;
 	display: flex;
@@ -61,7 +61,7 @@ html, body {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	height: 13rem;
+	height: auto;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -76,24 +76,21 @@ html, body {
 	position: relative;
 }
 
-.header_advert {
+.top_advert {
 	position: fixed;
-	top: 0;
+	z-index:2;
 	margin: auto;
-	height: 5rem;
+ margin-bottom:0.5rem;
+	height: 4rem;
 	width: 100%;
+	border:1px solid blue;
 }
 
 header {
-	margin-top: 5.5rem;
-	width: 60%;
-	height: auto;
-	margin: auto;
+width: 100%;
+	padding: 1rem 0;
+ margin:auto;
 	background-color: #ebfafa;
-	border-style: double;
-	border-width: 0.5px 0 3px 0;
-	border-color: #2eb8b8;
-	border-radius: 50%;
 }
 
 iframe {
@@ -104,11 +101,20 @@ iframe {
 }
 
 .tem {
+ width: 60%;
+ height: auto;
+ padding:12px 6px;
+ margin: auto;
 	color: #145252;
 	font-size: 20px;
 	font-family: Script-MT bold;
 	letter-spacing: 2px;
 	text-align: center;
+	border-style: double;
+	border-width: 1.2px 0 4.5px 0;
+	border-color: #2eb8b8;
+	border-radius: 50%;
+	vertical-align: middle;
 }
 
 #nav_wrapper, #story-list_wrapper {
@@ -119,12 +125,12 @@ iframe {
 
 #nav_wrapper:target {
 	position: fixed;
-	top: 8.8rem;
+	bottom:0;
 	right: 0;
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height: 88vh;
+	height: 85vh;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -143,7 +149,7 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 6%;
-	padding-top: 14rem;
+	padding-top: 10rem;
 	z-index: 1;
 }
 
@@ -152,7 +158,7 @@ nav {
 	visibility: visible;
 	width: 88%;
 	height: auto;
-	padding-top: 17.5rem;
+	padding-top: 12rem;
 	-webkit-transition: padding-top 0.4s ease;
 	-moz-transition: padding-top 0.4s ease;
 	-o-transition: padding-top 0.4s ease;
@@ -246,8 +252,7 @@ h5 {
 	width: 100%;
 }
 .first_link2 {
-position: absolute;
-	top: 16.5rem;
+
 	height: 5.2rem;
 	width: 100%;
 }
@@ -262,8 +267,8 @@ position: absolute;
 .close_menu2 {
 	display: inline-block;
 	padding: 0.2em;
-	width:30px;
-	height:30px;
+	position: absolute;
+	top: 11rem;
 	text-decoration: none;
 }
 
@@ -291,30 +296,34 @@ aside.left, aside.right {
 	height: auto;
 	width: 90%;
 	margin: auto;
-	margin-top: 6rem;
+	margin-top: 2rem;
 }
 
 .read {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-evenly;
-	height: 2rem;
-	padding-bottom:0.6rem;
-	margin: auto;
-	width: 96%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height:2rem;
+    margin:1.5rem auto 0.3rem auto;
+    width:80%;
+    position:relative;
+    z-index:2;
 }
 
 .read_stories {
-	background-color: #ccffcc;
+ background-color: #ccffcc;
 	border: 1px solid #39ac73;
 	font-family: Georgia, sans-serif;
 	font-weight: bold;
-	font-size: 1em;
-	padding: 9px;
+	font-size: 1rem;
+	padding: 5px 9px;
 	color: #0088cc;
 	height: auto;
 	text-align: center;
+	margin: auto;
+	width:auto;
+	position:absolute;
 }
 
 .figure_pi_coin {
@@ -433,27 +442,29 @@ input {
 }
 
 .menu {
-	float: right;
-	padding: 4px;
+	padding:4px;
+	position:absolute;
+	right:0.2rem;
 }
 
 .recent {
-	float: left;
 	padding: 4px;
+	position:absolute;
+	left:0.2rem;
 }
 
 .recent:hover, .recent:active, .menu:hover, .menu:active, .close_menu:hover, .close_menu:active,  .close_menu2:hover, .close_menu2:active {
 	border: 0.8px solid #99cc00;
 }
 details {
-	position: absolute;
-	top: 1rem;
-	z-index: 2;
+	margin-top: 1rem;
 	display: block;
 	margin: auto;
 	width: 98%;
 	height: auto;
 	font-size: 1rem;
+	position:relative;
+    z-index:2;
 }
 
 summary {
@@ -462,10 +473,10 @@ summary {
 	margin: auto;
 	margin-bottom: 8px;
 	color: #0088cc;
-	text-decoration: underline;
-	text-align: center;
+	text-decoration:underline;
+	text-align:center;
 	font-family: Georgia, Serif;
-	font-weight: bold;
+	font-size:12px;
 }
 
 .thanks {
@@ -534,7 +545,7 @@ button.page_number {
 }
 
 .white_footer_div {
-	width: 300px;
+	width: 290px;
 	height: auto;
 	background-color: #ffffff;
 	border-bottom-left-radius: 30px;
@@ -578,14 +589,14 @@ img.icon {
      
     
   <div class="page_wrapper">
-        <div class="page_container1">        
-
-<div class="header_advert">
-<i></i>
-</div>
+        <div class="page_container1">  
+                  
 <header>   
  <p class="tem">T&#232;m Library</p>     
-</header>
+</header>            
+
+
+
     <div class="read">
       <a class="recent"  href="#story-list_wrapper">
           <img width="30" height="30" src="/icons_fonts/scroll_icon.png" alt="Recent stories">
@@ -600,19 +611,7 @@ img.icon {
 </div>
 
 <div class="page_container2">
-<div id="nav_wrapper">
-    <nav>
-       <div class="first_link">
-<a class="close_menu" href="#">
-         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
-</div>
- <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
-        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
-        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
-  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
-    </nav>
-</div>
-
+    
     <details>
         <summary>Register</summary>
             <div class="register">
@@ -625,11 +624,11 @@ img.icon {
     </details>
 
    <div id="story-list_wrapper">
-  <div class="first_link2">
+ 
 <a class="close_menu2" href="#">
     <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel">
 </a>
-</div>
+
    <div class="list-container">
 <h4> Recent Stories </h4>
 <h5 id="story_list"> </h5>
@@ -805,7 +804,6 @@ https://temlibrary.pages.dev">
 </div>
 </div>
 
-
 <br>
 <small>
 Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
@@ -822,10 +820,24 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
  </small>
 
 </footer>
+
+
+<div id="nav_wrapper">
+    <nav>
+       <div class="first_link">
+<a class="close_menu" href="#">
+         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
 </div>
+ <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
+        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
+        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
+  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
+    </nav>
+</div>
+</div>
+
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
 </body>
 </html>
-
