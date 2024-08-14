@@ -21,14 +21,13 @@
    <meta property="article:tag" content="Pinterest_keyword1, Pinterest_keyword2, Pinterest_keyword3...">  
     <meta property="article:author" content="Tèm Library">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <style>
+  <style> 
 html, body {
 	height: auto;
-	width: 100%;
+	width:100%;
 	margin: 0;
 	padding: 0;
 	overflow-x:hidden;
-	overflow-y:hidden;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -103,7 +102,7 @@ iframe {
 .tem {
  width: 60%;
  height: auto;
- padding:12px 6px;
+ padding:1rem 0;
  margin: auto;
 	color: #145252;
 	font-size: 20px;
@@ -130,7 +129,7 @@ iframe {
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height: 85vh;
+	height:85%;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -158,7 +157,7 @@ nav {
 	visibility: visible;
 	width: 88%;
 	height: auto;
-	padding-top: 12rem;
+	padding-top: 12.5rem;
 	-webkit-transition: padding-top 0.4s ease;
 	-moz-transition: padding-top 0.4s ease;
 	-o-transition: padding-top 0.4s ease;
@@ -176,14 +175,9 @@ nav {
 	padding-top: 9px;
 }
 
-h1 {
+h2 {
 	color: #009999;
 	padding-bottom: 6px;
-}
-
-h2 {
-	text-decoration: underline;
-	color: #0088cc;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -191,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
-h4 {
+h4, h3 {
 	font-family: Niconne-Regular;
 	color: #009999;
 }
@@ -252,7 +246,6 @@ h5 {
 	width: 100%;
 }
 .first_link2 {
-
 	height: 5.2rem;
 	width: 100%;
 }
@@ -296,7 +289,7 @@ aside.left, aside.right {
 	height: auto;
 	width: 90%;
 	margin: auto;
-	margin-top: 2rem;
+	margin-top: 1.6rem;
 }
 
 .read {
@@ -306,7 +299,7 @@ aside.left, aside.right {
     justify-content: space-evenly;
     height:2rem;
     margin:1.5rem auto 0.3rem auto;
-    width:80%;
+    width:300px;
     position:relative;
     z-index:2;
 }
@@ -316,7 +309,7 @@ aside.left, aside.right {
 	border: 1px solid #39ac73;
 	font-family: Georgia, sans-serif;
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: 13px;
 	padding: 5px 9px;
 	color: #0088cc;
 	height: auto;
@@ -463,8 +456,8 @@ details {
 	width: 98%;
 	height: auto;
 	font-size: 1rem;
-	position:relative;
-    z-index:2;
+	position:absolute;
+ z-index:2;
 }
 
 summary {
@@ -536,20 +529,21 @@ small.page_number {
 	float: left;
 }
 
-button.page_number {
+.page_number{
 	padding: 4px 7px;
 }
 
-.page_button {
-	outline: 3px solid #ccffcc;
+.page_button{
+	outline: 2px solid #00e600;
+	padding: 4px 7px;
 }
 
 .white_footer_div {
-	width: 290px;
-	height: auto;
+	width:auto;
+	height:auto;
 	background-color: #ffffff;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
 	margin: 0 auto 32px;
 }
 
@@ -559,7 +553,7 @@ button.page_number {
 	margin: auto;
 	align-items: center;
 	justify-content: space-evenly;
-	width: 90%;
+	width: 290px;
 	height: 3rem;
 }
 
@@ -586,7 +580,6 @@ img.icon {
  </head>
 
 <body>
-     
     
   <div class="page_wrapper">
         <div class="page_container1">  
@@ -615,7 +608,6 @@ img.icon {
     <details>
         <summary>Register</summary>
             <div class="register">
-<h2> Hello </h2>
                 <div id="response"></div>
                 <p>Submit your email to receive a list of stories once a month.</p>
                 <input id="email" type="email" name="email" placeholder="Your email" autocomplete="on">
@@ -649,9 +641,10 @@ img.icon {
    <i class="can_display"></i>
     <i class="can_display"></i>
 </aside>
-<h1> Story Heading </h1>
-<main>
 
+<h2 style="margin-top:3rem;"> Story Heading </h2>
+
+<main>
 <article class="show" id="page_1" title="Page 1: story-title-here">
 <small class="page_number"> Page 1</small><br><br>
 <section>
@@ -662,7 +655,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading2 </h4>
+<h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 1.</p>
 <div class="advert">
@@ -670,7 +663,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading3 </h4>
+<h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 1.</p>
 <div class="advert">
@@ -678,7 +671,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading4 </h4>
+<h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 1.</p>
 <div class="advert">
@@ -697,7 +690,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading2 </h4>
+<h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 2.</p>
 <div class="advert">
@@ -705,7 +698,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading3 </h4>
+<h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 2.</p>
 <div class="advert">
@@ -713,7 +706,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading4 </h4>
+<h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 2.</p>
 <div class="advert">
@@ -732,7 +725,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading2 </h4>
+<h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 3.</p>
 <div class="advert">
@@ -740,7 +733,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading3 </h4>
+<h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 3.</p>
 <div class="advert">
@@ -748,7 +741,7 @@ img.icon {
 </div>
 </section>
 <section>
-<h4> Optional Heading4 </h4>
+<h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 3.</p>
 <div class="advert">
@@ -759,7 +752,7 @@ img.icon {
 
 
 <div class="button_row">
-<button onclick="pg1()" class="page_number" id="btn1"> 1</button>
+<button onclick="pg1()" class="page_button" id="btn1"> 1</button>
 <button onclick="pg2()" class="page_number" id="btn2"> 2</button>
 <button onclick="pg3()" class="page_number" id="btn3"> 3</button>
 <button onclick="pg4()" class="page_number" id="btn4"> 4</button>
@@ -769,7 +762,18 @@ img.icon {
 </div>
 </div>
 
-
+<div id="nav_wrapper">
+    <nav>
+       <div class="first_link">
+<a class="close_menu" href="#">
+         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
+</div>
+ <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
+        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
+        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
+  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
+    </nav>
+</div>
 <footer>
 <div class="white_footer_div">
 <p class="share_story_text"> Share this story</p>
@@ -816,25 +820,14 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 </small><br>
   <small>
      <span> &#169; </span> <span id="year"></span> 
-<span> T&#232;m Library</span>
+<span> T&#232;m Library   |  <a href="/html/privacyPolicy.html">Privacy Policy</a>   |   <a href="/html/cookiePolicy.html"> Cookie Policy</a></span>
  </small>
 
 </footer>
+</div>
 
 
-<div id="nav_wrapper">
-    <nav>
-       <div class="first_link">
-<a class="close_menu" href="#">
-         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
-</div>
- <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
-        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
-        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
-  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
-    </nav>
-</div>
-</div>
+
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript" src="/js/email_register.js"></script>
