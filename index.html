@@ -21,10 +21,10 @@
    <meta property="article:tag" content="Pinterest_keyword1, Pinterest_keyword2, Pinterest_keyword3...">  
     <meta property="article:author" content="Tèm Library">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <style> 
+    <style>
 html, body {
 	height: auto;
-	width:100%;
+	width:699px;
 	margin: 0;
 	padding: 0;
 	overflow-x:hidden;
@@ -64,7 +64,7 @@ html, body {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	border-bottom: 0.5px solid #39ac73;
+	border-bottom: 0.4px solid #39ac73;
 }
 
 .page_container2 {
@@ -90,6 +90,7 @@ width: 100%;
 	padding: 1rem 0;
  margin:auto;
 	background-color: #ebfafa;
+	border:1px solid #2eb8b8;
 }
 
 iframe {
@@ -129,7 +130,7 @@ iframe {
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height:85%;
+	height:100vh;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -148,7 +149,7 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 6%;
-	padding-top: 10rem;
+	padding-top: 8rem;
 	z-index: 1;
 }
 
@@ -157,7 +158,7 @@ nav {
 	visibility: visible;
 	width: 88%;
 	height: auto;
-	padding-top: 12.5rem;
+	padding-top: 11.8rem;
 	-webkit-transition: padding-top 0.4s ease;
 	-moz-transition: padding-top 0.4s ease;
 	-o-transition: padding-top 0.4s ease;
@@ -171,13 +172,14 @@ nav {
 	background-color: #d6f5f5;
 	border: 1px solid #39ac73;
 	border-top: 0;
-	border-radius: 19px;
+	border-radius: 7px;
 	padding-top: 9px;
 }
 
 h2 {
 	color: #009999;
 	padding-bottom: 6px;
+	margin-top:3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -198,28 +200,30 @@ h5 {
 .current-story {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
-	height: 45px;
+	height: auto;
 	padding: 3px;
 	border-top: 1px solid #39ac73;
 }
 
 .thumbnail {
-	width: auto;
+ border:1px solid black;
+	max-width: 25%;
+	width:auto;
 	height: 47px;
+	object-fit:center;
+	float: left;
 }
 
 .story-link {
 	font-family: Tahoma, sans-serif;
 	color: #009999;
-	font-size: 1rem;
-	padding-left: 3px;
-	text-decoration: none;
+	font-size: 0.6rem;
+	padding-left: 5px;
 }
 
-.news_link {
+.news_link, .contact, .next_line {
 	display: none;
 }
 
@@ -319,20 +323,6 @@ aside.left, aside.right {
 	position:absolute;
 }
 
-.figure_pi_coin {
-	display: block;
-	height: 50%;
-	margin: auto;
-	width: 96%;
-}
-
-.pi_youtube_screenshot {
-	display: block;
-	height: 100%;
-	margin: inherit;
-	width: 100%;
-}
-
 .story_picture {
 	width: 96%;
 }
@@ -349,18 +339,8 @@ aside.left, aside.right {
 	margin: 1em auto;
 }
 
-.youtube_link {
-	border: 1px solid #248f24;
-	border-radius: 10px;
-	display: block;
-	height: 100%;
-	margin: auto;
-	width: 100%;
-}
-
-.youtube_link:hover, .youtube_link:active {
-	outline: 4px solid #ffff99;
-	outline-offset: 3px;
+.youtube_link, .emoji, .figure_pi_coin, .pi_youtube_screenshot {
+	display:none;
 }
 
 .advert1, .advert2, .advert3, .advert4, .advert9, .advert10 {
@@ -375,10 +355,6 @@ aside.left, aside.right {
 	height: 37%;
 	margin: 0.5em auto;
 	width: 100%;
-}
-
-.emoji {
-	font-size: 36px;
 }
 
 .advert {
@@ -577,7 +553,7 @@ img.icon {
 	display: inline-block;
 }
 </style>
- </head>
+    </head>
 
 <body>
     
@@ -624,10 +600,32 @@ img.icon {
    <div class="list-container">
 <h4> Recent Stories </h4>
 <h5 id="story_list"> </h5>
-<div class="current-story">
-<img class="thumbnail" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
- <a class="story-link" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+<div class="next_line" id="div1">
+<img class="thumbnail" id="img1" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link1" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
+ <div class="next_line" id="div2">
+<img class="thumbnail" id="img2" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link2" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+ </div> 
+ <div class="next_line" id="div3">
+<img class="thumbnail" id="img3" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link3" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+ </div> 
+ <div class="next_line" id="div4">
+<img class="thumbnail" id="img4" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link4" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+ </div> 
+ <div class="next_line" id="div5">
+<img class="thumbnail" id="img5" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link5" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+ </div> 
+ <div class="next_line" id="div6">
+<img class="thumbnail" id="img6" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <a class="story-link" id="link6" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
+ </div> 
+ 
+ 
     </div>
 </div>
 
@@ -642,13 +640,13 @@ img.icon {
     <i class="can_display"></i>
 </aside>
 
-<h2 style="margin-top:3rem;"> Story Heading </h2>
+<h2 id="topic"> Story Heading </h2>
 
 <main>
 <article class="show" id="page_1" title="Page 1: story-title-here">
 <small class="page_number"> Page 1</small><br><br>
 <section>
-<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" id="first_pic" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 1.</p>
 <div class="advert">
 <i> first advert iframe</i>
@@ -750,6 +748,41 @@ img.icon {
 </section>
 </article>
 
+<article class="not_show" id="page_4" title="Page 4: story-title-here">
+<small class="page_number"> Page 4</small><br><br>
+<section>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
+<p>This is the first paragraph on page 4.</p>
+<div class="advert">
+<i> first advert iframe</i>
+</div>
+</section>
+<section>
+<h3> Optional Heading2 </h3>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the second paragraph on page 4.</p>
+<div class="advert">
+<i> second advert iframe</i>
+</div>
+</section>
+<section>
+<h3> Optional Heading3 </h3>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the third paragraph on page 4.</p>
+<div class="advert">
+<i> third advert iframe</i>
+</div>
+</section>
+<section>
+<h3> Optional Heading4 </h3>
+<img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
+<p> This is the fourth paragraph on page 4.</p>
+<div class="advert">
+<i> fourth advert iframe</i>
+</div>
+</section>
+</article>
+
 
 <div class="button_row">
 <button onclick="pg1()" class="page_button" id="btn1"> 1</button>
@@ -830,6 +863,38 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 
 <script type="text/javascript" src="/js/get_year.js"></script>
+<script type="text/javascript">
+
+var page_1; var page_2; 
+var page_3; var page_4;
+var page_5; var page_6;  
+var counter;
+
+var topics=document.querySelector("#topic").textContent;
+var pics=document.querySelector("#first_pic").src;
+var page=window.location.href;
+
+function createCookie(type, picture, heading, number) {
+    document.cookie=encodeURIComponent(type) + "=" + encodeURIComponent(page) + "; max-age=2592000; path=/";
+    document.cookie=encodeURIComponent(picture) + "=" + encodeURIComponent(pics) + "; max-age=2592000; path=/";
+    document.cookie=encodeURIComponent(heading) + "=" + encodeURIComponent(topics) + "; max-age=2592000; path=/";
+    document.cookie="count=" + encodeURIComponent(number) + "; max-age=2592000; path=/";
+}
+
+try{
+  counter=getCookies("count");
+} catch{
+    counter=0;
+}
+
+switch(counter){
+    case 0:
+    document.cookie="pageone=pages; max-age=2592000; path=/";
+break;
+}
+page_1=getCookie("pageone"); 
+    alert(page_1);
+</script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
 </body>
