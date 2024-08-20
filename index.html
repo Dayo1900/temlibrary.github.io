@@ -265,7 +265,7 @@ h5 {
 	display: inline-block;
 	padding: 0.2em;
 	position: absolute;
-	top: 11rem;
+	top: 11.rem;
 	text-decoration: none;
 }
 
@@ -624,11 +624,10 @@ img.icon {
 <img class="thumbnail" id="img6" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
  <a class="story-link" id="link6" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- 
- 
     </div>
 </div>
 
+<script> alert("welcome"); </script>
 
 <div class="main_container">
   <aside class="left">
@@ -864,38 +863,34 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
+function storeinfo(new_page, page, new_heading, heading, new_image, image, count, number) {
+LocalStorage.setItem("new_heading", heading);   
+LocalStorage.setItem("new_image", image);    LocalStorage.setItem("new_page", page);
+LocalStorage.setItem("count", number);
 
-var page_1; var page_2; 
-var page_3; var page_4;
-var page_5; var page_6;  
-var counter;
+  }
 
-var topics=document.querySelector("#topic").textContent;
-var pics=document.querySelector("#first_pic").src;
-var page=window.location.href;
-
-function createCookie(type, picture, heading, number) {
-    document.cookie=encodeURIComponent(type) + "=" + encodeURIComponent(page) + "; max-age=2592000; path=/";
-    document.cookie=encodeURIComponent(picture) + "=" + encodeURIComponent(pics) + "; max-age=2592000; path=/";
-    document.cookie=encodeURIComponent(heading) + "=" + encodeURIComponent(topics) + "; max-age=2592000; path=/";
-    document.cookie="count=" + encodeURIComponent(number) + "; max-age=2592000; path=/";
-}
-
-try{
-  counter=getCookies("count");
+  function pick_element_set_info(story, name, picture, source, anchor, link, new_heading, new_image,new_page){
+      var story=document.querySelector("#name").innerHTML;
+      var picture=document.querySelector("#source").src;
+      var anchor=document.querySelector("#link").href;
+           story=LocalStorage.new_heading;
+picture=LocalStorage.new_image;    
+anchor=LocalStorage.new_page;
+  }
+  
+  function change_class(item, new_class){
+      item.setAttribute("class", "new_class"); 
+  }
+  
+  try{
+   counter=LocalStorage.getItem("count");
 } catch{
     counter=0;
 }
-/*
-switch(counter){
-    case 0:
-    document.cookie="pageone=pages; max-age=2592000; path=/";
-break;
-}*/
-
-document.cookie="pageone=pages";
-page_1=getCookie("pageone"); 
-    alert(page_1);
+storeinfo("topic1", topics, "image1", pics, "page1", page, "count", 1);
+    pick_element_set_info("div_1", "div1", "img_1", "img1", "link_1", "link1", LocalStorage.topic1, LocalStorage.image1, LocalStorage.page1); 
+  alert (  LocalStorage.topic1);
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
