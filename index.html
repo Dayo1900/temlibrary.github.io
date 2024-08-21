@@ -862,73 +862,9 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
           
-if(typeof storage=="undefined"){
- var announce=document.querySelector("#announce");
- announce.innerHTML= "Enable cookies on your browser to view your recent stories";
-} else {
-var topics=document.querySelector("#topic").innerHTML;
-var pics=document.querySelector("#first_pic").src;
-var page=window.location.href;
-
-function createCookie(text_page, page, text_pic, pics, text_title, topics, number) {
-var pg=text_page+"="+page+"; max-age=2592000; pa=/";
-var topic=text_title+"="+topics+"; max-age=2592000; pa=/";
-var pic=text_pic+"="+pic+"; max-age=2592000; pa=/";
-var counting= "count=" + number + "; max-age=2592000; path=/";
-    document.cookie=pg;
-  document.cookie=topic;
-    document.cookie=pic;
-    document.cookie=counting;
-}
-
-try{
-  counter=getCookies("count");
-} catch{
-    counter=0;
-}
-
-function set_title(ID, cuky){
-    var variable=document.querySelector(ID);
-    variable.innerHTML=getCookie(cuky);
-}
-
-function set_href(ID, cuky){
-    var variable=document.querySelector(ID);
-    variable.href=getCookie(cuky);
-}
-
-function set_pic(ID, cuky){
-    var variable=document.querySelector(ID);
-    variable.src=getCookie(cuky);
-}
-
-function set_attribute(ID){
-    var variable=document.querySelector(ID);
-    variable.setAttribute=("class", "current_story");
-}
-
-
-switch(counter){
-    case 0:
-    createCookie("page1", page, "img_1", pics, "topic1", topics, 2);
-    set_title("link1", "topic1");
-    set_href("link1", "page1");
-    set_pic("img1", "img_1");
-    set_attribute("div1");
-break;
-case 1:
-createCookie("page2", page, "img_2", pics, "topic2", topics,3);
-    set_title("link1", "topic1");
-    set_title("link2", "topic2");
-    set_href("link1", "page1");
-    set_href("link2", "page2");
-    set_pic("img1", "img_1");
-    set_pic("img2", "img_2");
-    set_attribute("div1");
-    set_attribute("div2")
-break;
-}
-}
+document.cookie="user=Dayo";
+var tell=getCookie("user");
+alert(tell);
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
