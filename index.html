@@ -861,7 +861,24 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
-       alert (localStorage.topic1);
+          function storeinfo(new_page, page, new_heading, heading, new_image, image, count, number) {
+LocalStorage.setItem("new_heading", "heading");   
+LocalStorage.setItem("new_image", "image");  
+  LocalStorage.setItem("new_page", "page");
+LocalStorage.setItem("count", "number");
+  }
+
+  function pick_element_set_info(story, name, picture, source, anchor, link, new_heading, new_image,new_page){
+      var story=document.querySelector("#name").innerHTML;
+      var picture=document.querySelector("#source").src;
+      var anchor=document.querySelector("#link").href;    story=LocalStorage.new_heading;
+picture=LocalStorage.new_image;    
+anchor=LocalStorage.new_page;
+  }
+
+  storeinfo("topic1", topics, "image1", pics, "page1", page, "count", 1);
+    pick_element_set_info("div_1", "div1", "img_1", "img1", "link_1", "link1", LocalStorage.topic1, LocalStorage.image1, LocalStorage.page1); 
+  alert(LocalStorage.topic1);
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
