@@ -863,95 +863,10 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
-   if(typeof window == "undefined"){
-       alert("not_available");
+   if(typeof storage=="undefined"){
+       alert("not available")
    } else{
-   
-   
-   function storeinfo(new_page, page, new_heading, heading, new_image, image, count, number) {
-LocalStorage.setItem("new_heading", "heading");   
-LocalStorage.setItem("new_image", "image");  
-  LocalStorage.setItem("new_page", "page");
-LocalStorage.setItem("count", "number");
-
-  }
-
-  function pick_element_set_info(story, name, picture, source, anchor, link, new_heading, new_image,new_page){
-      var story=document.querySelector("#name").innerHTML;
-      var picture=document.querySelector("#source").src;
-      var anchor=document.querySelector("#link").href;
-           story=LocalStorage.new_heading;
-picture=LocalStorage.new_image;    
-anchor=LocalStorage.new_page;
-  }
-  
-  function change_class(item, new_class){
-      item.setAttribute("class", "new_class"); 
-  }
-  
-  try{
-   counter=LocalStorage.getItem("count");
-} catch{
-    counter=0;
-}
-storeinfo("topic1", topics, "image1", pics, "page1", page, "count", 1);
-    pick_element_set_info("div_1", "div1", "img_1", "img1", "link_1", "link1", LocalStorage.topic1, LocalStorage.image1, LocalStorage.page1); 
-  alert (  LocalStorage.topic1);
-    
-    change_class("div_1", current_story);
-var topics='document.querySelector("#topic").textContent';
-var pics='document.querySelector("#first_pic").src';
-var page=window.location.href;
-
-
-switch(counter){
-    case 0:
-    storeinfo("topic1", topics, "image1", pics, "page1", page, "count", 1);
-    pick_element_set_info("div_1", "div1", "img_1", "img1", "link_1", "link1", LocalStorage.topic1, LocalStorage.image1, LocalStorage.page1);  
-    change_class("div_1", current_story);
-    break;
-    case 1:
-    storeinfo("topic2", topics, "image2", pics, "page2", page, "count", 2);
-    pick_element_set_info("div_2", "div2", "img_2", "img2", "link_2", "link2", LocalStorage.topic2, LocalStorage.image2, LocalStorage.page2);  
-    change_class("div_1", current_story);
-    change_class("div_2", current_story);
-    break;
-    case 2:
-    storeinfo("topic3", topics, "image3", pics, "page3", page, "count", 3);
-    pick_element_set_info("div_3", "div3", "img_3", "img3", "link_3", "link3", LocalStorage.topic3, LocalStorage.image3, LocalStorage.page3); 
-    change_class("div_1", current_story);
-    change_class("div_2", current_story);
-    change_class("div_3", current_story);
-    break;
-    case 3:
-    storeinfo("topic4", topics, "image4", pics, "page4", page, "count", 4);
-    pick_element_set_info("div_4", "div4", "img_4", "img4", "link_4", "link4", LocalStorage.topic4, LocalStorage.image4, LocalStorage.page4); 
-    change_class("div_1", current_story);
-    change_class("div_2", current_story);
-    change_class("div_3", current_story);
-    change_class("div_4", current_story);
-    break;
-    case 4:
-    storeinfo("topic5", topics, "image5", pics, "page5", page, "count", 5);
-    pick_element_set_info("div_5", "div5", "img_5", "img5", "link_5", "link5", LocalStorage.topic5, LocalStorage.image5, LocalStorage.page5); 
-    change_class("div_1", current_story);
-    change_class("div_2", current_story);
-    change_class("div_3", current_story);
-    change_class("div_4", current_story);
-    change_class("div_5", current_story);
-    break;
-    case 5:
-    storeinfo("topic6", topics, "image6", pics, "page6", page, "count", 0);
-    pick_element_set_info("div_6", "div6", "img_6", "img6", "link_6", "link6", LocalStorage.topic6, LocalStorage.image6, LocalStorage.page6); 
-    change_class("div_1", current_story);
-    change_class("div_2", current_story);
-    change_class("div_3", current_story);
-    change_class("div_4", current_story);
-    change_class("div_5", current_story);
-    change_class("div_6", current_story);
-    break;
-    }
-    }
+       alert ("It's is available");
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
