@@ -627,14 +627,6 @@ img.icon {
     </div>
 </div>
 
-
-<script type="text/javascript">        
-document.cookie = "user=Dayo_top";
-var tell=getCookie("user")+ "me";
-alert(document.cookie);
-</script>
-
-
 <div class="main_container">
   <aside class="left">
    <i class="can_display"></i>
@@ -869,10 +861,55 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
-          
-document.cookie = "user=Dayo"
-var tell=getCookie("user");
-alert(tell);
+/*if(typeof storage=="undefined"){
+ var announce=document.querySelector("#announce");
+ announce.innerHTML= "Enable cookies on your browser to view your recent stories";
+} else {*/
+var data=new Array(18); var string;
+
+var topics=document.querySelector("#topic").innerHTML;
+var pics=document.querySelector("#first_pic").src;
+var page=window.location.href;
+
+var create_array=document.cookie.split("=");
+var array=create_array[1];
+ data=array.split(",");
+ //fill-in undefined values with empty space.
+ for(var i=0; i<data.length; i++){
+     if(data[i]=="undefined"){
+         data[i]=".";
+     }
+ }
+
+function input_cookie_value(){
+data.shift();
+data.push(page);
+data.push(pics); 
+data.push(topics);
+}
+function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
+var variable1="document.querySelector("+ID1+");"
+var variable2="document.querySelector("+ID2+");"
+var variable3="document.querySelector("+ID3+");"
+var variable4="document.querySelector("+ID4+");"
+variable1.href=data[num1];
+variable2.src=data[num2];
+variable3.innerHTML=data[num3];
+variable4.setAttribute=("class", "current_story");
+}
+function store_cookies(){
+    var string=data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+data[5]+","+data[6]+","+data[7]+","+data[8]+","+data[9]+","+data[10]+","+data[11]+","+data[12]+","+data[13]+","+data[14]+","+data[15]+","+data[16]+","+data[17];    document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
+}
+input_cookie_value();
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
+update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
+update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
+
+store_cookies();
+alert(document.cookie);
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
