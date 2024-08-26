@@ -130,7 +130,7 @@ iframe {
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height:100vh;
+	height:81vh;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -140,7 +140,9 @@ iframe {
 nav {
 	background-color: #ccffcc;
 	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
 	border-left: 0.5px solid #39ac73;
+	border-top: 0.5px solid #39ac73;
 	height: 100%;
 	width: 100%;
 }
@@ -197,7 +199,7 @@ h5 {
 	color: #009999;
 }
 
-.current-story {
+.current_story {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -207,7 +209,7 @@ h5 {
 	border-top: 1px solid #39ac73;
 }
 
-.thumbnail {
+.photo {
  border:1px solid black;
 	max-width: 25%;
 	width:auto;
@@ -223,8 +225,11 @@ h5 {
 	padding-left: 5px;
 }
 
-.news_link, .contact, .next_line {
-	display: none;
+.news_link, .contact, .not_show{
+	display:none;
+}
+.not_show{
+	display:none;
 }
 
 .nav_link {
@@ -265,7 +270,7 @@ h5 {
 	display: inline-block;
 	padding: 0.2em;
 	position: absolute;
-	top: 11.rem;
+	top: 11.6rem;
 	text-decoration: none;
 }
 
@@ -473,10 +478,6 @@ details>*:not(summary) {
 	font-family: Niconne-Regular;
 }
 
-.not_show {
-	display: none;
-}
-
 .show {
 	width: 100%;
 	height: auto;
@@ -551,6 +552,11 @@ img.icon {
 	position: absolute;
 	top: 0;
 	display: inline-block;
+}
+#announce{
+    text-align: center;
+    font-size:11px;
+    font-family:Garamond, sans-serif;
 }
 </style>
     </head>
@@ -861,28 +867,25 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
-//*if(typeof storage=="undefined"){
+/*if(typeof storage=="undefined"){
  var announce=document.querySelector("#announce");
  announce.innerHTML= "Enable cookies on your browser to view your recent stories";
-} else {*/
-var data=new Array(); var string; 
-var values=new Array(); var combine=new Array();
+} else {*/ 
+var string; var data=[]; 
 
 var topics=document.querySelector("#topic").innerHTML;
 var pics=document.querySelector("#first_pic").src;
 var page=window.location.href;
 
 var create_array=document.cookie.split("=");
+var check=create_array.length;
+if(check>1){
 var array=create_array[1];
- data=array.split(",");
-
-function input_cookie_value(){
-   values[0]=""; 
-   values[1]="";
-   values[2]="";
-   combine=values.concat(data);
-  return combine;
+var data=array.split(",");
 }
+
+var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
+
 function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
 var variable1=document.querySelector(ID1);
 var variable2=document.querySelector(ID2);
@@ -891,61 +894,51 @@ var variable4=document.querySelector(ID4);
 variable1.href=combine[num1];
 variable2.src=combine[num2];
 variable3.innerHTML=combine[num3];
- variable4.setAttribute( "class", "current_story");
+variable4.setAttribute("class", "current_story");
 }
 function store_cookies(){
     var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
 }
 
-input_cookie_value();
 var count=combine.length;
 
-if(count<=4){
+switch(count){
+    case 3: 
 update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-}
-if(4<count<8){
+    break;
+    case 6:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
 update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-}
-if(4<count<11){
+    break;
+    case 9:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
 update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-}
-if(count<=13){
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);   
-}
-if(count<=16){
+    break;
+    case 12:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);  
+break;
+    case 15:   
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
 update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14); 
-}
-if(count<=19){
+break;
+    case 18:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
+update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
 update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
 }
-
-/*switch(count){
-    case 4: 
-    break;
-    case 7:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
- 
-    break;
-    case 10:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
- update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
-    break;
-    case 13:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
- update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
-    case 16:   
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
- update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
-    case 19:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
- update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
-
-}
-*/
-
-
 store_cookies();
 alert(document.cookie);
+
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
