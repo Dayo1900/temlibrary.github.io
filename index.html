@@ -861,11 +861,12 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 
 <script type="text/javascript" src="/js/get_year.js"></script>
 <script type="text/javascript">
-/*if(typeof storage=="undefined"){
+//*if(typeof storage=="undefined"){
  var announce=document.querySelector("#announce");
  announce.innerHTML= "Enable cookies on your browser to view your recent stories";
 } else {*/
-var data=new Array(18); var string;
+var data=new Array(); var string; 
+var values=new Array(); var combine=new Array();
 
 var topics=document.querySelector("#topic").innerHTML;
 var pics=document.querySelector("#first_pic").src;
@@ -874,39 +875,74 @@ var page=window.location.href;
 var create_array=document.cookie.split("=");
 var array=create_array[1];
  data=array.split(",");
- //fill-in undefined values with empty space.
- for(var i=0; i<data.length; i++){
-     if(data[i]=="undefined"){
-         data[i]=".";
-     }
- }
 
 function input_cookie_value(){
-data.shift();
-data.push(page);
-data.push(pics); 
-data.push(topics);
+   values[0]=""; 
+   values[1]="";
+   values[2]="";
+   combine=values.concat(data);
+  return combine;
 }
 function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
-var variable1="document.querySelector("+ID1+");"
-var variable2="document.querySelector("+ID2+");"
-var variable3="document.querySelector("+ID3+");"
-var variable4="document.querySelector("+ID4+");"
-variable1.href=data[num1];
-variable2.src=data[num2];
-variable3.innerHTML=data[num3];
-variable4.setAttribute=("class", "current_story");
+var variable1=document.querySelector(ID1);
+var variable2=document.querySelector(ID2);
+var variable3=document.querySelector(ID3);
+var variable4=document.querySelector(ID4);
+variable1.href=combine[num1];
+variable2.src=combine[num2];
+variable3.innerHTML=combine[num3];
+ variable4.setAttribute( "class", "current_story");
 }
 function store_cookies(){
-    var string=data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+data[5]+","+data[6]+","+data[7]+","+data[8]+","+data[9]+","+data[10]+","+data[11]+","+data[12]+","+data[13]+","+data[14]+","+data[15]+","+data[16]+","+data[17];    document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
+    var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
 }
+
 input_cookie_value();
+var count=combine.length;
+
+if(count<=4){
 update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+}
+if(4<count<8){
 update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+}
+if(4<count<11){
 update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
-update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
+}
+if(count<=13){
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);   
+}
+if(count<=16){
+update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14); 
+}
+if(count<=19){
 update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
+}
+
+/*switch(count){
+    case 4: 
+    break;
+    case 7:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+ 
+    break;
+    case 10:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+ update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
+    break;
+    case 13:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+ update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
+    case 16:   
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+ update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
+    case 19:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+ update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
+
+}
+*/
+
 
 store_cookies();
 alert(document.cookie);
