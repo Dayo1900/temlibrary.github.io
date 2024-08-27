@@ -90,7 +90,7 @@ width: 100%;
 	padding: 1rem 0;
  margin:auto;
 	background-color: #ebfafa;
-	border:1px solid #2eb8b8;
+	border-top:1px solid #2eb8b8;
 }
 
 iframe {
@@ -124,13 +124,13 @@ iframe {
 }
 
 #nav_wrapper:target {
-	position:fixed;
+	position: fixed;
 	bottom:0;
 	right: 0;
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height: 75.5vh;
+	height:80vh;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -210,12 +210,11 @@ h5 {
 }
 
 .photo {
- border:1px solid black;
-	max-width: 25%;
 	width:auto;
-	height: 70px;
+	height: 55px;
 	object-fit:center;
 	float: left;
+	padding-right:5px;
 }
 
 .story-link {
@@ -560,7 +559,6 @@ img.icon {
 }
 </style>
     </head>
-
 <body>
     
   <div class="page_wrapper">
@@ -574,13 +572,13 @@ img.icon {
 
     <div class="read">
       <a class="recent"  href="#story-list_wrapper">
-          <img width="30" height="30" src="/icons_fonts/scroll_icon.png" alt="Recent stories">
+          <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/scroll_icon.png?v=1724705250412" alt="Recent stories">
     </a>
         <h5 class="read_stories">
             Read Stories
         </h5>
           <a class="menu" href="#nav_wrapper">
-<img width="30" height="30" src="/icons_fonts/menu_icon.png" alt="menu"/>
+<img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/menu_icon.png?v=1724705299408" alt="menu"/>
 </a>
     </div>
 </div>
@@ -600,38 +598,39 @@ img.icon {
    <div id="story-list_wrapper">
  
 <a class="close_menu2" href="#">
-    <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel">
+    <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/cancel_icon.png?v=1724704962231" alt="cancel">
 </a>
 
-   <div class="list-container">
-<h4> Recent Stories </h4>
+    <div class="list-container">
+<h4> Recent Pages</h4>
 <h5 id="story_list"> </h5>
-<div class="next_line" id="div1">
-<img class="thumbnail" id="img1" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+<div class="not_show" id="div1">
+<img class="photo" id="img1" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link1" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- <div class="next_line" id="div2">
-<img class="thumbnail" id="img2" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <div class="not_show" id="div2">
+<img class="photo" id="img2" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link2" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- <div class="next_line" id="div3">
-<img class="thumbnail" id="img3" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <div class="not_show" id="div3">
+<img class="photo" id="img3" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link3" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- <div class="next_line" id="div4">
-<img class="thumbnail" id="img4" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <div class="not_show" id="div4">
+<img class="photo" id="img4" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link4" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- <div class="next_line" id="div5">
-<img class="thumbnail" id="img5" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <div class="not_show" id="div5">
+<img class="photo" id="img5" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link5" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
  </div> 
- <div class="next_line" id="div6">
-<img class="thumbnail" id="img6" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Thumbnail">
+ <div class="not_show" id="div6">
+<img class="photo" id="img6" src="https://img.icons8.com/offices/40/000000/align-justify.png" alt="Photo">
  <a class="story-link" id="link6" target="_top"  href="/html/_stories.html">A Recent Story.#ccffff </a>
- </div> 
+ </div>
     </div>
 </div>
+
 
 <div class="main_container">
   <aside class="left">
@@ -649,7 +648,7 @@ img.icon {
 <article class="show" id="page_1" title="Page 1: story-title-here">
 <small class="page_number"> Page 1</small><br><br>
 <section>
-<img class="story_picture/story_gif" id="first_pic" src=" " alt="optional image/gif" title=" ">
+<img class="story_picture/story_gif" id="first_pic" src="/icons_fonts/envelope_icon.png" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 1.</p>
 <div class="advert">
 <i> first advert iframe</i>
@@ -802,7 +801,7 @@ img.icon {
     <nav>
        <div class="first_link">
 <a class="close_menu" href="#">
-         <img width="30" height="30" src="/icons_fonts/cancel_icon.png" alt="cancel"></a>
+         <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/cancel_icon.png?v=1724704962231" alt="cancel"></a>
 </div>
  <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
         <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
@@ -817,29 +816,28 @@ img.icon {
 
 
 <a href="https://url of the rich pin you created for this particular story.com">
-<img width="36" height="37" src="/icons_fonts/pinterest_icon.png" alt="pinterest" style="margin-bottom:4px;"></a>
+<img width="36" height="37" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/pinterest_icon.png?v=1724705193663" alt="pinterest" style="margin-bottom:4px;"></a>
 
 
 <a  href="mailto:someone@example.com?&subject=Story Title
 &body= Hello,%0D%0A%0D
 Click the link below to read this story.%0D%0A%0D%0A
-Regards.%0D%0A%0D%0A
 https://temlibrary.pages.dev">
-<img width="32" height="30" src="/icons_fonts/envelope_icon.png" alt="email">
+<img width="32" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/envelope_icon.png?v=1724705046652" alt="email">
 </a>
 <a href="https://www.facebook.com/dialog/share?app_id=1426315081299599 &href=https%3A%2F%2Ftemlibrary.pages.dev">
-<img id="ogBtn" width="38" height="38" src="/icons_fonts/facebook_icon.png">
+<img width="38" height="38" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/facebook_icon.png?v=1724705066617">
 </a>
 
 <a  href="https://twitter.com/intent/tweet?text=Nice%20story%20%40temlibrary%20%20https://temlibrary.pages.dev%20%23keyword1%20%23keyword2">
-<img width="36" height="37"  src="/icons_fonts/twitter_icon.png" alt="twitter">
+<img width="36" height="37"  src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/twitter_icon.png?v=1724705282157" alt="twitter">
 </a>
 
 <a href='https://t.me/share/url?url={https%3A%2F%2Ftemlibrary.pages.dev}&text={Paragraphs}'>
-<img width="32" height="32" src="/icons_fonts/telegram_icon.jpg"></a>
+<img width="32" height="32" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/telegram_icon.jpg?v=1724705266877" alt="telegram"></a>
 
 <a  href="whatsapp://send?text=https://temlibrary.pages.dev">
-<img width="40" height="41" src="/icons_fonts/whatsapp_icon.png" alt="whatsapp">
+<img width="40" height="41" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/whatsapp_icon.png?v=1724705316661" alt="whatsapp">
 </a>
 </div>
 </div>
@@ -858,15 +856,11 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
      <span> &#169; </span> <span id="year"></span> 
 <span> T&#232;m Library   |  <a href="/html/privacyPolicy.html">Privacy Policy</a>   |   <a href="/html/cookiePolicy.html"> Cookie Policy</a></span>
  </small>
-
 </footer>
 </div>
 
-
-
-
 <script type="text/javascript" src="/js/get_year.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="/js/cookie_jar.js">
 /*if(typeof storage=="undefined"){
  var announce=document.querySelector("#announce");
  announce.innerHTML= "Enable cookies on your browser to view your recent stories";
@@ -887,6 +881,7 @@ var data=array.split(",");
 var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
 
 function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
+if(page!==data[num1]){
 var variable1=document.querySelector(ID1);
 var variable2=document.querySelector(ID2);
 var variable3=document.querySelector(ID3);
@@ -894,7 +889,10 @@ var variable4=document.querySelector(ID4);
 variable1.href=combine[num1];
 variable2.src=combine[num2];
 variable3.innerHTML=combine[num3];
-variable4.setAttribute("class", "current_story");
+if(variable3.innerHTML!=="undefined"){
+ variable4.setAttribute("class", "current_story");
+     }
+   }  
 }
 function store_cookies(){
     var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
@@ -937,10 +935,11 @@ update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
 update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
 }
 store_cookies();
-alert(document.cookie);
+
 
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
+
 </body>
 </html>
