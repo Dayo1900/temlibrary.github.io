@@ -130,7 +130,7 @@ iframe {
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height:80%;
+	height:80vh;
 	-webkit-transition: width 0.6s ease;
 	-moz-transition: width 0.6s ease;
 	-o-transition: width 0.6s ease;
@@ -878,10 +878,13 @@ var array=create_array[1];
 var data=array.split(",");
 }
 
-var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
+if(page==data[0]){
+    var combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
+} else{
+    var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
+}
 
 function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
-if(page!==data[num1]){
 var variable1=document.querySelector(ID1);
 var variable2=document.querySelector(ID2);
 var variable3=document.querySelector(ID3);
@@ -891,7 +894,6 @@ variable2.src=combine[num2];
 variable3.innerHTML=combine[num3];
 if(variable3.innerHTML!=="undefined"){
  variable4.setAttribute("class", "current_story");
-     }
    }  
 }
 function store_cookies(){
