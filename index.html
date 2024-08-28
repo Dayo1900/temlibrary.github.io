@@ -22,12 +22,11 @@
     <meta property="article:author" content="Tèm Library">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <style>
-html, body {
+	html, body {
 	height: auto;
 	width:100%;
 	margin: 0;
 	padding: 0;
-box-sizing:border-box;
 	overflow-x:hidden;
 }
 
@@ -40,7 +39,8 @@ box-sizing:border-box;
 
 @media screen and (prefers-reduced-motion: reduce) {
 	* {
-		transition-duration: 0.001ms !important;
+		-webkit-transition-duration: 0.001ms !important;
+		        transition-duration: 0.001ms !important;
 	}
 }
 
@@ -53,8 +53,13 @@ box-sizing:border-box;
 	margin: 0;
 	height: auto;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .page_container1 {
@@ -63,8 +68,13 @@ box-sizing:border-box;
 	margin: 0;
 	height: auto;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	border-bottom: 0.4px solid #39ac73;
 }
 
@@ -131,10 +141,8 @@ iframe {
 	z-index: 3;
 	visibility: visible;
 	width: 56%;
-	height:77.6vh;
+	height:80vh;
 	-webkit-transition: width 0.6s ease;
-	-moz-transition: width 0.6s ease;
-	-o-transition: width 0.6s ease;
 	transition: width 0.6s ease;
 }
 
@@ -163,8 +171,6 @@ nav {
 	height: auto;
 	padding-top: 11.8rem;
 	-webkit-transition: padding-top 0.4s ease;
-	-moz-transition: padding-top 0.4s ease;
-	-o-transition: padding-top 0.4s ease;
 	transition: padding-top 0.4s ease;
 }
 
@@ -172,7 +178,6 @@ nav {
 	min-height: 100px;
 	height: auto;
 	width: 100%;
-overflow-y: auto;
 	background-color: #d6f5f5;
 	border: 1px solid #39ac73;
 	border-top: 0;
@@ -202,9 +207,16 @@ h5 {
 }
 
 .current_story {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 100%;
 	height: auto;
 	padding: 3px;
@@ -214,7 +226,8 @@ h5 {
 .photo {
 	width:auto;
 	height: 55px;
-	object-fit:center;
+	-o-object-fit:center;
+	   object-fit:center;
 	float: left;
 	padding-right:5px;
 }
@@ -248,9 +261,15 @@ h5 {
 }
 
 .first_link {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 	border-bottom: 1px solid #39ac73;
 	height: 5.2rem;
 	width: 100%;
@@ -286,9 +305,15 @@ main {
 	height: auto;
 	width: 100%;
 	word-spacing: 1px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-content: space-around;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-ms-flex-line-pack: distribute;
+	    align-content: space-around;
 }
 
 aside.left, aside.right {
@@ -303,10 +328,19 @@ aside.left, aside.right {
 }
 
 .read {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     height:2rem;
     margin:1.5rem auto 0.3rem auto;
     width:300px;
@@ -340,7 +374,8 @@ aside.left, aside.right {
 .story_picture, .story_gif {
 	display: block;
 	min-height: 45px;
-	object-fit: contain;
+	-o-object-fit: contain;
+	   object-fit: contain;
 	height: auto;
 	margin: 1em auto;
 }
@@ -491,9 +526,16 @@ details>*:not(summary) {
 	width: 80%;
 	height: auto;
 	margin: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
 }
 
 small {
@@ -526,11 +568,20 @@ small.page_number {
 }
 
 .share_story_div {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
 	margin: auto;
-	align-items: center;
-	justify-content: space-evenly;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
 	width: 290px;
 	height: 3rem;
 }
