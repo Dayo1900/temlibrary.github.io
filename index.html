@@ -159,7 +159,6 @@ nav {
 #story-list_wrapper {
 	position: fixed;
 	top: 0;
-	left: 6%;
 	padding-top: 20vh;
 	z-index: 1;
 }
@@ -178,6 +177,7 @@ nav {
 min-height: 100px;
 	height: auto;
 	width: 88%;
+	margin: auto;
 	background-color: #d6f5f5;
 	border: 1px solid #39ac73;
 	border-radius: 7px;
@@ -272,7 +272,7 @@ h5 {
 	text-decoration: none;
 	font-family: Georgia, serif;
 	font-weight: 2px;
-	font-size: 1.2em;
+	font-size: 14px;
 	text-align: center;
 }
 
@@ -392,18 +392,17 @@ aside.left, aside.right {
 	display:none;
 }
 
-.advert1, .advert2, .advert3, .advert4, .advert9, .advert10 {
+.body_advert {
 	display: block;
-	height: auto;
+	min-height: 25px;
 	margin: auto;
-	width: 70%;
+	width: 65%;
+	border:1px solid red;
 }
 
-.advert5, .advert6, .advert7, .advert8 {
-	display: block;
-	height: 37%;
-	margin: 0.5em auto;
-	width: 100%;
+.aside_advert {
+	display: none;
+	
 }
 
 .advert {
@@ -477,12 +476,12 @@ input {
 details {
 	margin-top: 1rem;
 	display: block;
-	margin: auto;
+	position:absolute;
+	left:1%;
+ z-index:2;	
 	width: 98%;
 	height: auto;
 	font-size: 1rem;
-	position:absolute;
- z-index:2;
 }
 
 summary {
@@ -621,6 +620,7 @@ img.icon {
 
 </style>
     </head>
+
 <body>
     
   <div class="page_wrapper">
@@ -657,8 +657,9 @@ img.icon {
             </div>
     </details>
 
-   <div id="story-list_wrapper">
-<div class="list-container">  
+ <div id="story-list_wrapper">
+
+  <div class="list-container">  
 <div style="width 100%; height 30px;">    
 <a class="close_menu2" href="#">
     <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/cancel_icon.png?v=1724704962231" alt="cancel">
@@ -694,17 +695,19 @@ img.icon {
     </div>
 </div>
 
+
 <div class="main_container">
   <aside class="left">
    <i class="can_display"></i>
-    <i class="can_display"></i>
+   <i class="can_display"></i>
 </aside>
 <aside class="right">
    <i class="can_display"></i>
-    <i class="can_display"></i>
+   <i class="can_display"></i>
 </aside>
 
 <h2 id="topic"> Story Heading </h2>
+
 
 <main>
 <article class="show" id="page_1" title="Page 1: story-title-here">
@@ -712,7 +715,7 @@ img.icon {
 <section>
 <img class="story_picture/story_gif" id="first_pic" src="/icons_fonts/envelope_icon.png" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 1.</p>
-<div class="advert">
+<div class="body_advert">
 <i> first advert iframe</i>
 </div>
 </section>
@@ -720,7 +723,7 @@ img.icon {
 <h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 1.</p>
-<div class="advert">
+<div class="body_advert">
 <i> second advert iframe</i>
 </div>
 </section>
@@ -728,7 +731,7 @@ img.icon {
 <h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 1.</p>
-<div class="advert">
+<div class="body_advert">
 <i> third advert iframe</i>
 </div>
 </section>
@@ -736,7 +739,7 @@ img.icon {
 <h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 1.</p>
-<div class="advert">
+<div class="body_advert">
 <i> fourth advert iframe</i>
 </div>
 </section>
@@ -747,7 +750,7 @@ img.icon {
 <section>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 2.</p>
-<div class="advert">
+<div class="body_advert">
 <i> first advert iframe</i>
 </div>
 </section>
@@ -755,7 +758,7 @@ img.icon {
 <h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 2.</p>
-<div class="advert">
+<div class="body_advert">
 <i> second advert iframe</i>
 </div>
 </section>
@@ -763,7 +766,7 @@ img.icon {
 <h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 2.</p>
-<div class="advert">
+<div class="body_advert">
 <i> third advert iframe</i>
 </div>
 </section>
@@ -771,7 +774,7 @@ img.icon {
 <h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 2.</p>
-<div class="advert">
+<div class="body_advert">
 <i> fourth advert iframe</i>
 </div>
 </section>
@@ -782,7 +785,7 @@ img.icon {
 <section>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 3.</p>
-<div class="advert">
+<div class="body_advert">
 <i> first advert iframe</i>
 </div>
 </section>
@@ -790,7 +793,7 @@ img.icon {
 <h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 3.</p>
-<div class="advert">
+<div class="body_advert">
 <i> second advert iframe</i>
 </div>
 </section>
@@ -798,7 +801,7 @@ img.icon {
 <h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 3.</p>
-<div class="advert">
+<div class="body_advert">
 <i> third advert iframe</i>
 </div>
 </section>
@@ -806,7 +809,7 @@ img.icon {
 <h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 3.</p>
-<div class="advert">
+<div class="body_advert">
 <i> fourth advert iframe</i>
 </div>
 </section>
@@ -817,7 +820,7 @@ img.icon {
 <section>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 4.</p>
-<div class="advert">
+<div class="body_advert">
 <i> first advert iframe</i>
 </div>
 </section>
@@ -825,7 +828,7 @@ img.icon {
 <h3> Optional Heading2 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 4.</p>
-<div class="advert">
+<div class="body_advert">
 <i> second advert iframe</i>
 </div>
 </section>
@@ -833,7 +836,7 @@ img.icon {
 <h3> Optional Heading3 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 4.</p>
-<div class="advert">
+<div class="body_advert">
 <i> third advert iframe</i>
 </div>
 </section>
@@ -841,7 +844,7 @@ img.icon {
 <h3> Optional Heading4 </h3>
 <img class="story_picture/story_gif" src=" " alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 4.</p>
-<div class="advert">
+<div class="body_advert">
 <i> fourth advert iframe</i>
 </div>
 </section>
@@ -854,8 +857,9 @@ img.icon {
 <button onclick="pg3()" class="page_number" id="btn3"> 3</button>
 <button onclick="pg4()" class="page_number" id="btn4"> 4</button>
 </div>
-</main>
+
 <br><br><br>
+</main>
 </div>
 </div>
 
@@ -865,9 +869,9 @@ img.icon {
 <a class="close_menu" href="#">
          <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/cancel_icon.png?v=1724704962231" alt="cancel"></a>
 </div>
- <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
-        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
-        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian</a>
+ <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children Stories</a>
+        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General Stories</a>
+        <a class="nav_link" target="_top"  href="/HTML/christian_stories.html">Christian Stories</a>
   <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
     </nav>
 </div>
@@ -914,94 +918,16 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 <a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   <br>
 </small><br>
+<small>All rights reserved.</small><br>
   <small>
      <span> &#169; </span> <span id="year"></span> 
-<span> T&#232;m Library   |  <a href="/html/privacyPolicy.html">Privacy Policy</a>   |   <a href="/html/cookiePolicy.html"> Cookie Policy</a></span>
+<span> T&#232;m Library   |  <a href="/cookie_policy.html"> Policy</a>   |   <a href="/terms_of_use.html"> Terms of Use</a></span>
  </small>
 </footer>
 </div>
 
 <script type="text/javascript" src="/js/get_year.js"></script>
-<script type="text/javascript">
-/*if(typeof storage=="undefined"){
- var announce=document.querySelector("#announce");
- announce.innerHTML= "Enable cookies on your browser to view your recent stories";
-} else {*/ 
-var string; var data=[]; 
-
-var topics=document.querySelector("#topic").innerHTML;
-var pics=document.querySelector("#first_pic").src;
-var page=window.location.href;
-
-var create_array=document.cookie.split("=");
-var check=create_array.length;
-if(check>1){
-var array=create_array[1];
-var data=array.split(",");
-}
-
-if((topics==data[2]) || (topics==data[5]) || (topics==data[8]) || (topics==data[11]) || (topics==data[14])){
-    var combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
-} else{
-    var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17]];
-}
-
-function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
-var variable1=document.querySelector(ID1);
-var variable2=document.querySelector(ID2);
-var variable3=document.querySelector(ID3);
-var variable4=document.querySelector(ID4);
-variable1.href=combine[num1];
-variable2.src=combine[num2];
-variable3.innerHTML=combine[num3];
-if(variable3.innerHTML!=="undefined"){
- variable4.setAttribute("class", "current_story");
-   }  
-}
-function store_cookies(){
-    var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
-}
-
-var count=combine.length;
-
-switch(count){
-    case 3: 
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-    break;
-    case 6:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-    break;
-    case 9:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-    break;
-    case 12:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);  
-break;
-    case 15:   
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
-update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14); 
-break;
-    case 18:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
-update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
-update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
-}
-store_cookies();
-
-
-</script>
+<script type="text/javascript" src="/js/cookie_jar.js"></script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
 
