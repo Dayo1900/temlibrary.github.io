@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Story title</title>
@@ -168,7 +168,7 @@ nav {
 	visibility: visible;
 	width: 100%;
 	height: auto;
-	padding-top: 30.6vh;
+	padding-top: 30.75vh;
 	-webkit-transition: padding-top 0.4s ease;
 	transition: padding-top 0.4s ease;
 }
@@ -488,7 +488,7 @@ details {
 summary {
 	width: 50%;
 	padding: 0.5em;
- padding-top:0.3em;
+	padding-top:0.3em;
 	margin: auto;
 	margin-bottom: 8px;
 	color: #0088cc;
@@ -697,7 +697,7 @@ img.icon {
     </div>
 </div>
 
-
+<h2 id="topic"> Story Heading </h2>
 <div class="main_container">
   <aside class="left">
    <i class="can_display"></i>
@@ -707,9 +707,6 @@ img.icon {
    <i class="can_display"></i>
    <i class="can_display"></i>
 </aside>
-
-<h2 id="topic"> Story Heading </h2>
-
 
 <main>
 <article class="show" id="page_1" title="Page 1: story-title-here">
@@ -929,7 +926,86 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 </div>
 
 <script type="text/javascript" src="/js/get_year.js"></script>
-<script type="text/javascript" src="/js/cookie_jar.js"></script>
+<script>
+/*if(typeof storage=="undefined"){
+ var announce=document.querySelector("#announce");
+ announce.innerHTML= "Enable cookies on your browser to view your recent stories";
+} else {*/ 
+var string; var data=[]; 
+
+var topics=document.querySelector("#topic").innerHTML;
+var pics=document.querySelector("#first_pic").src;
+var page=window.location.href;
+
+var create_array=document.cookie.split("=");
+var check=create_array.length;
+if(check>1){
+var array=create_array[1];
+var data=array.split(",");
+}
+
+if((topics==data[2]) || (topics==data[5]) || (topics==data[8]) || (topics==data[11]) || (topics==data[14])){
+    var combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
+} else{
+    var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17]];
+}
+
+function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
+var variable1=document.querySelector(ID1);
+var variable2=document.querySelector(ID2);
+var variable3=document.querySelector(ID3);
+var variable4=document.querySelector(ID4);
+variable1.href=combine[num1];
+variable2.src=combine[num2];
+variable3.innerHTML=combine[num3];
+if(variable3.innerHTML!=="undefined"){
+ variable4.setAttribute("class", "current_story");
+   }  
+}
+function store_cookies(){
+    var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/html";
+}
+
+var count=combine.length;
+
+switch(count){
+    case 3: 
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+    break;
+    case 6:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+    break;
+    case 9:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+    break;
+    case 12:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);  
+break;
+    case 15:   
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
+update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14); 
+break;
+    case 18:
+update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
+update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
+update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
+update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
+update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
+update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
+}
+store_cookies();
+
+
+</script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
 
