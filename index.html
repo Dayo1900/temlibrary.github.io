@@ -24,7 +24,7 @@
     <style>
 html, body {
 	height: auto;
-	width:100%;
+	width:999px;
 	margin: 0;
 	padding: 0;
 	overflow-x:hidden;
@@ -84,6 +84,7 @@ html, body {
 	height: auto;
 	width: 100%;
 	position: relative;
+	border:1px solid black;
 }
 
 .top_advert {
@@ -168,7 +169,7 @@ nav {
 	visibility: visible;
 	width: 100%;
 	height: auto;
-	padding-top: 30.7vh;
+	padding-top: 30.82vh;
 	-webkit-transition: padding-top 0.4s ease;
 	transition: padding-top 0.4s ease;
 }
@@ -176,7 +177,7 @@ nav {
 .list-container {
 min-height: 100px;
 	height: auto;
-	width: 88%;
+	width: 70%;
 	margin: auto;
 	background-color: #d6f5f5;
 	border: 1px solid #39ac73;
@@ -187,7 +188,7 @@ min-height: 100px;
 h2 {
 	color: #009999;
 	padding-bottom: 6px;
-	margin-top:3rem;
+	margin-top:2rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -311,28 +312,31 @@ main {
 	font-size: 14px;
 	line-height: 1.2;
 	height: auto;
-	width: 100%;
+	width: 84%;
 	word-spacing: 1px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-ms-flex-line-pack: distribute;
-	    align-content: space-around;
+	display: inline-block;
+	border:2px solid green;
 }
 
-aside.left, aside.right {
+aside.right {
 	display: none;
+}
+aside.left{
+    background-color:#eafafa;
+    height:auto;
+    width:14%;
+    padding:6px;
+    border:1px solid purple;
 }
 
 .main_container {
-	height: auto;
-	width: 90%;
+	height: 100%;
+	width: 98%;
+	border:1px solid red;
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
 	margin: auto;
-	margin-top: 1.6rem;
 }
 
 .read {
@@ -351,7 +355,7 @@ aside.left, aside.right {
             justify-content: space-evenly;
     height:2rem;
     margin:1.5rem auto 0.3rem auto;
-    width:300px;
+    width:480px;
     position:relative;
     z-index:2;
 }
@@ -372,13 +376,11 @@ aside.left, aside.right {
 }
 
 .story_picture {
-	width: 98%;
-	height:auto;
+	width: 88px;
 }
 
 .story_gif {
-	width: auto;
-	height:120px;
+	width: 70%;
 }
 
 .story_picture, .story_gif {
@@ -386,6 +388,7 @@ aside.left, aside.right {
 	min-height: 45px;
 	-o-object-fit: contain;
 	   object-fit: contain;
+	height: auto;
 	margin: 1em auto;
 }
 
@@ -397,14 +400,15 @@ aside.left, aside.right {
 	display: block;
 	min-height: 25px;
 	margin: auto;
-	width: 86%;
-	height: auto;
+	width: 65%;
 	border:1px solid red;
 }
 
 .aside_advert {
-	display: none;
-	
+	display: block;
+	height: 37%;
+	margin: 0.5em auto;
+	width: 100%;
 }
 
 .advert {
@@ -477,12 +481,13 @@ input {
 }
 details {
 	display: block;
-	position:absolute;
-	left:1%;
- z-index:2;	
-	width: 100%;
+	margin: auto;
+	width: 45%;
 	height: auto;
 	font-size: 1rem;
+	position:absolute;
+	left:27.5%;
+ z-index:2;
 }
 
 summary {
@@ -532,7 +537,7 @@ details>*:not(summary) {
 }
 
 .button_row {
-	width: 80%;
+	width: 300px;
 	height: auto;
 	margin: auto;
 	display: -webkit-box;
@@ -697,7 +702,7 @@ img.icon {
     </div>
 </div>
 
-<h2 id="topic"> Story Land (1) </h2>
+<h2 id="topic"> Six </h2>
 <div class="main_container">
   <aside class="left">
    <i class="can_display"></i>
@@ -926,12 +931,12 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 </div>
 
 <script type="text/javascript" src="/js/get_year.js"></script>
-<script>
+<script type="text/javascript">
 /*if(typeof storage=="undefined"){
  var announce=document.querySelector("#announce");
  announce.innerHTML= "Enable cookies on your browser to view your recent stories";
 } else {*/ 
-var string; var data=[]; 
+var string; var data=[]; var combine;
 
 var topics=document.querySelector("#topic").innerHTML;
 var pics=document.querySelector("#first_pic").src;
@@ -939,16 +944,48 @@ var page=window.location.href;
 
 var create_array=document.cookie.split("=");
 var check=create_array.length;
+
 if(check>1){
 var array=create_array[1];
-var data=array.split(",");
+data=array.split(",");
 }
 
-if((topics==data[2]) || (topics==data[5]) || (topics==data[8]) || (topics==data[11]) || (topics==data[14])){
-    var combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
-} else{
-    var combine=[page, pics, topics, data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17]];
+var test1=(topics==data[2])? 1:0;
+var test2=(topics==data[5])? 1:0;
+var test3=(topics==data[8])? 1:0;
+var test4=(topics==data[11])? 1:0;
+var test5=(topics==data[14])? 1:0;
+var test6=(topics==data[17])? 1:0;
+var check=[test1, test2, test3, test4, test5, test6];
+var sum=0;
+for(var i=0; i<check.length; i++){
+    sum=sum+check[i];
+    
 }
+alert(sum);
+
+if(sum>0){
+    combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17]];
+}
+if(sum==0){
+    combine=[page, pics, topics];
+    combine.push(data[0]);
+    combine.push(data[1]);  
+    combine.push(data[2]);
+    combine.push(data[3]);
+    combine.push(data[4]);  
+    combine.push(data[5]);
+    combine.push(data[6]);  
+    combine.push(data[7]);
+    combine.push(data[8]);  
+    combine.push(data[9]);
+    combine.push(data[10]);  
+    combine.push(data[11]);
+    combine.push(data[12]);  
+    combine.push(data[13]);
+    combine.push(data[14]);  
+ }   
+ /*   combine=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];*/
 
 function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
 var variable1=document.querySelector(ID1);
@@ -958,12 +995,13 @@ var variable4=document.querySelector(ID4);
 variable1.href=combine[num1];
 variable2.src=combine[num2];
 variable3.innerHTML=combine[num3];
+
 if(variable3.innerHTML!=="undefined"){
  variable4.setAttribute("class", "current_story");
    }  
 }
-function store_cookies(){
-    var string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/html";
+function store_cookies(){ 
+string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
 }
 
 var count=combine.length;
@@ -1001,9 +1039,27 @@ update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
 update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
 update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
 update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
+break;
+case 21:
+alert("combine is 21");
+break;
+case 24:
+alert("combine is 24");
+break;
+case 27:
+alert("combine is 27");
+break;
+case 30:
+alert("combine is 30");
+break;
+case 33:
+alert("combine is 33");
+break;
 }
 store_cookies();
 
+alert(combine);
+alert(document.cookie);
 
 </script>
 <script type="text/javascript" src="/js/email_register.js"></script>
