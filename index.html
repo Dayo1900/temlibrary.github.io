@@ -24,7 +24,7 @@
     <style>
 html, body {
 	height: auto;
-	width:999px;
+	width:1080px;
 	margin: 0;
 	padding: 0;
 	overflow-x:hidden;
@@ -75,7 +75,6 @@ html, body {
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
 	        flex-direction: column;
-	border-bottom: 0.4px solid #39ac73;
 }
 
 .page_container2 {
@@ -84,7 +83,6 @@ html, body {
 	height: auto;
 	width: 100%;
 	position: relative;
-	border:1px solid black;
 }
 
 .top_advert {
@@ -94,7 +92,6 @@ html, body {
  margin-bottom:0.5rem;
 	height: 4rem;
 	width: 100%;
-	border:1px solid blue;
 }
 
 header {
@@ -111,7 +108,9 @@ iframe {
 	width: 100%;
 	height: auto;
 }
-
+.ad_iframe{
+    height:100%;
+}
 .tem {
  width: 60%;
  height: auto;
@@ -129,66 +128,40 @@ iframe {
 	vertical-align: middle;
 }
 
-#nav_wrapper, #story-list_wrapper {
-	height: 1px;
-	width: 1px;
-	visibility: hidden;
+#nav_wrapper, #story-list_wrapper, list_container {
+	display: none;
 }
-
-#nav_wrapper:target {
-	position: fixed;
-	bottom:0;
-	right: 0;
-	z-index: 3;
-	visibility: visible;
-	width: 56%;
-	height:77.5vh;
-	-webkit-transition: width 0.6s ease;
-	transition: width 0.6s ease;
-}
-
 nav {
+display: flex;
+flex-direction:row;
+justify-content: center;
 	background-color: #ccffcc;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-bottom: 1px solid #39ac73;
+	border-top: 1px solid #39ac73;
+	height:auto;
+	width: 100%;
+}
+.nav_link, .nav_link_last {
+	display: inline-block;
 	border-left: 0.5px solid #39ac73;
-	border-top: 0.5px solid #39ac73;
-	height: 100%;
-	width: 100%;
-}
-
-#story-list_wrapper {
-	position: fixed;
-	top: 0;
-	padding-top: 20vh;
-	z-index: 1;
-}
-
-#story-list_wrapper:target {
-	display: block;
-	visibility: visible;
-	width: 100%;
+	color: #009999;
+	padding: 0.5rem 0;
 	height: auto;
-	padding-top: 30.82vh;
-	-webkit-transition: padding-top 0.4s ease;
-	transition: padding-top 0.4s ease;
+	width: 6.5rem;
+	text-decoration: none;
+	font-family: Georgia, serif;
+	font-weight: 2px;
+	font-size: 14px;
+	text-align: center;
 }
-
-.list-container {
-min-height: 100px;
-	height: auto;
-	width: 70%;
-	margin: auto;
-	background-color: #d6f5f5;
-	border: 1px solid #39ac73;
-	border-radius: 7px;
-	padding-top: 9px;
+.nav_link_last{
+    border-right: 0.5px solid #39ac73;
 }
 
 h2 {
 	color: #009999;
 	padding-bottom: 6px;
-	margin-top:2rem;
+	margin-top:4rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -225,13 +198,6 @@ h5 {
 	border-top: 1px solid #39ac73;
 	margin:0;
 }
-.close_menu2 {
- float:left;
- width:auto;
- display: block;
-	padding:0.2em;
-	text-decoration:none;
-}
 .cover{
  height:auto;
  width:100%;
@@ -259,23 +225,6 @@ h5 {
 .news_link, .contact, .not_show{
 	display:none;
 }
-.not_show{
-	display:none;
-}
-
-.nav_link {
-	display: block;
-	border-bottom: 1px solid #39ac73;
-	color: #009999;
-	padding: 0.5em 0;
-	height: auto;
-	width: 100%;
-	text-decoration: none;
-	font-family: Georgia, serif;
-	font-weight: 2px;
-	font-size: 14px;
-	text-align: center;
-}
 
 .first_link {
 	display: -webkit-box;
@@ -295,15 +244,7 @@ h5 {
 	height: 5.2rem;
 	width: 100%;
 }
-
-.close_menu {
-	margin-right: 30px;
-	display: inline-block;
-	padding: 0.2em;
-	text-decoration: none;
-}
-
-.nav_link:hover, .nav_link:active {
+.nav_link:hover, .nav_link:active, .nav_link_last:hover, .nav_link_last:active {
 	background-color: #9fdfbf;
 }
 
@@ -312,27 +253,19 @@ main {
 	font-size: 14px;
 	line-height: 1.2;
 	height: auto;
-	width: 84%;
+	width: 76%;
 	word-spacing: 1px;
 	display: inline-block;
-	border:2px solid green;
 }
-
-aside.right {
-	display: none;
-}
-aside.left{
+aside.left, aside.right{
     background-color:#eafafa;
     height:auto;
-    width:14%;
+    width:10%;
     padding:6px;
-    border:1px solid purple;
 }
-
 .main_container {
 	height: 100%;
 	width: 98%;
-	border:1px solid red;
 	display:flex;
 	flex-direction:row;
 	justify-content: space-between;
@@ -340,47 +273,34 @@ aside.left{
 }
 
 .read {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    height:2rem;
-    margin:1.5rem auto 0.3rem auto;
-    width:480px;
-    position:relative;
-    z-index:2;
+	display: block;
+ height:auto;
+ margin-top:2rem;
+width:100%;
 }
 
 .read_stories {
  background-color: #ccffcc;
 	border: 1px solid #39ac73;
+	border-bottom:0;
 	font-family: Georgia, sans-serif;
 	font-weight: bold;
 	font-size: 13px;
-	padding: 5px 9px;
+	padding: 9px 0;
 	color: #0088cc;
 	height: auto;
 	text-align: center;
 	margin: auto;
-	width:auto;
-	position:absolute;
+	width:10rem;
+	display: block;
 }
 
 .story_picture {
-	width: 14%;
+	width: 96%;
 }
 
 .story_gif {
-	width: 70%;
+	width: 30%;
 }
 
 .story_picture, .story_gif {
@@ -401,22 +321,16 @@ aside.left{
 	min-height: 25px;
 	margin: auto;
 	width: 65%;
-	border:1px solid red;
 }
 
 .aside_advert {
 	display: block;
-	height: 37%;
-	margin: 0.5em auto;
-	width: 100%;
-}
-
-.advert {
 	height: auto;
-	margin: 1em auto;
-	width: 90%;
+	margin: auto;
+	margin-bottom:2em;
+	width: 98%;
+	border:0;
 }
-
 .footer_iframe {
 	font-family: Montserrat-Regular;
 	text-align: center;
@@ -442,7 +356,7 @@ button:hover, button:active {
 
 footer {
 	min-height: 90px;
-	height: auto;
+	height: auto; 
 	width: 100%;
 	text-align: center;
 	background-color: #e6f7ff;
@@ -464,24 +378,13 @@ input {
 	font-family: Tahoma, sans-serif;
 }
 
-.menu {
-	padding:4px;
-	position:absolute;
-	right:0.2rem;
-}
-
-.recent {
-	padding: 4px;
-	position:absolute;
-	left:0.2rem;
-}
-
-.recent:hover, .recent:active, .menu:hover, .menu:active, .close_menu:hover, .close_menu:active,  .close_menu2:hover, .close_menu2:active {
-	border: 0.8px solid #99cc00;
+.menu, .recent {
+	display:none;
 }
 details {
 	display: block;
 	margin: auto;
+	margin-top:1rem;
 	width: 45%;
 	height: auto;
 	font-size: 1rem;
@@ -649,6 +552,13 @@ img.icon {
           <a class="menu" href="#nav_wrapper">
 <img width="30" height="30" src="https://cdn.glitch.global/6e753445-43c6-463f-9c47-aaf95efc0a3a/menu_icon.png?v=1724705299408" alt="menu"/>
 </a>
+
+<nav id="desktop_nav">
+ <a class="nav_link" target="_top"  href="/HTML/children_stories.html">Children</a>
+        <a class="nav_link" target="_top"  href="/HTML/general_stories.html">General</a>
+        <a class="nav_link_last" target="_top"  href="/HTML/christian_stories.html">Christian</a>
+  <a class="news_link" target="_top"  href="/HTML/news.html">Trending News</a>
+    </nav>
     </div>
 </div>
 
@@ -702,17 +612,13 @@ img.icon {
     </div>
 </div>
 
-<h2 id="topic">Eleven</h2>
+<h2 id="topic"> Story Heading </h2>
 <div class="main_container">
   <aside class="left">
-   <i class="can_display"></i>
-   <i class="can_display"></i>
+   <iframe src="/adverts/advert5.html" class="aside_advert"></iframe>
+   <iframe src="/adverts/advert6.html" class="aside_advert"></iframe>
+   <iframe id="tablet_view" src="https://www.google.com" class="aside_advert"></iframe>
 </aside>
-<aside class="right">
-   <i class="can_display"></i>
-   <i class="can_display"></i>
-</aside>
-
 <main>
 <article class="show" id="page_1" title="Page 1: story-title-here">
 <small class="page_number"> Page 1</small><br><br>
@@ -720,7 +626,7 @@ img.icon {
 <img class="story_picture" id="first_pic" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 1.</p>
 <div class="body_advert">
-<i> first advert iframe</i>
+<iframe src="https://www.google.com"> first advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -728,7 +634,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 1.</p>
 <div class="body_advert">
-<i> second advert iframe</i>
+<iframe src="https://www.google.com"> second advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -736,7 +642,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 1.</p>
 <div class="body_advert">
-<i> third advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -744,7 +650,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 1.</p>
 <div class="body_advert">
-<i> fourth advert iframe</i>
+<iframe src="https://www.google.com"> fourth advert iframe</iframe>
 </div>
 </section>
 </article>
@@ -755,7 +661,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 2.</p>
 <div class="body_advert">
-<i> first advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -763,7 +669,7 @@ img.icon {
 <img class="story_gif" src=" https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 2.</p>
 <div class="body_advert">
-<i> second advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -771,7 +677,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 2.</p>
 <div class="body_advert">
-<i> third advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -779,7 +685,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 2.</p>
 <div class="body_advert">
-<i> fourth advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 </article>
@@ -790,7 +696,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 3.</p>
 <div class="body_advert">
-<i> first advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -798,7 +704,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 3.</p>
 <div class="body_advert">
-<i> second advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -806,7 +712,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 3.</p>
 <div class="body_advert">
-<i> third advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -814,7 +720,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 3.</p>
 <div class="body_advert">
-<i> fourth advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 </article>
@@ -825,7 +731,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" ">
 <p>This is the first paragraph on page 4.</p>
 <div class="body_advert">
-<i> first advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -833,7 +739,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the second paragraph on page 4.</p>
 <div class="body_advert">
-<i> second advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -841,7 +747,7 @@ img.icon {
 <img class="story_picture" src="https://www.animatedimages.org/data/media/570/animated-merry-christmas-image-0275.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the third paragraph on page 4.</p>
 <div class="body_advert">
-<i> third advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 <section>
@@ -849,7 +755,7 @@ img.icon {
 <img class="story_gif" src="https://www.animatedimages.org/data/media/202/animated-dog-image-0731.gif" alt="optional image/gif" title=" " loading="lazy">
 <p> This is the fourth paragraph on page 4.</p>
 <div class="body_advert">
-<i> fourth advert iframe</i>
+<iframe src="https://www.google.com"> third advert iframe</iframe>
 </div>
 </section>
 </article>
@@ -864,6 +770,10 @@ img.icon {
 
 <br><br><br>
 </main>
+<aside class="right">
+   <iframe src="https://www.google.com" class="aside_advert"></iframe>
+   <iframe src="https://www.google.com" class="aside_advert"></iframe>
+</aside>
 </div>
 </div>
 
@@ -921,147 +831,20 @@ Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a>,
 <a  href="https://icons8.com/icon/uPyvV9qxnXJm/menu">Menu</a> icon by <a href="https://icons8.com">Icons8</a>,  
 <a target="_blank" href="https://icons8.com/icon/74556/scroll">Scroll</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
   <br>
-</small><br>
-<small>All rights reserved.</small><br>
-  <small>
-     <span> &#169; </span> <span id="year"></span> 
-<span> T&#232;m Library   |  <a href="/cookie_policy.html"> Policy</a>   |   <a href="/terms_of_use.html"> Terms of Use</a></span>
+</small><br>  
+  <small>     
+<span>
+  <a href="/cookie_policy.html">Cookie Policy </a>   |   <a href="/terms_of_use.html"> Terms of Use </a>
+    </span>
  </small>
+ <br>
+ <small>
+    <span> &#169; </span> <span id="year"></span> T&#232;m Library. All rights reserved.</small>
 </footer>
 </div>
 
 <script type="text/javascript" src="/js/get_year.js"></script>
-<script type="text/javascript">
-/*if(typeof storage=="undefined"){
- var announce=document.querySelector("#announce");
- announce.innerHTML= "Enable cookies on your browser to view your recent stories";
-} else {*/ 
-var string; var data=[]; var combine;
-
-var topics=document.querySelector("#topic").innerHTML;
-var pics=document.querySelector("#first_pic").src;
-var page=window.location.href;
-
-var create_array=document.cookie.split("=");
-var check=create_array.length;
-
-if(check>1){
-var array=create_array[1];
-data=array.split(",");
-}
-
-var test1=(topics==data[2])? 1:0;
-var test2=(topics==data[5])? 1:0;
-var test3=(topics==data[8])? 1:0;
-var test4=(topics==data[11])? 1:0;
-var test5=(topics==data[14])? 1:0;
-var test6=(topics==data[17])? 1:0;
-var check=[test1, test2, test3, test4, test5, test6];
-var sum=0;
-for(var i=0; i<check.length; i++){
-    sum=sum+check[i];
-    
-}
-alert(sum);
-
-if(sum>0){
-    combine=[data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15], data[16], data[17]];
-}
-if(sum==0){
-    combine=[page, pics, topics];
-    combine.push(data[0]);
-    combine.push(data[1]);  
-    combine.push(data[2]);
-    combine.push(data[3]);
-    combine.push(data[4]);  
-    combine.push(data[5]);
-    combine.push(data[6]);  
-    combine.push(data[7]);
-    combine.push(data[8]);  
-    combine.push(data[9]);
-    combine.push(data[10]);  
-    combine.push(data[11]);
-    combine.push(data[12]);  
-    combine.push(data[13]);
-    combine.push(data[14]);  
- }   
- /*   combine=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];*/
-
-function update_element_properties(ID1, ID2, ID3, ID4, num1, num2, num3){
-var variable1=document.querySelector(ID1);
-var variable2=document.querySelector(ID2);
-var variable3=document.querySelector(ID3);
-var variable4=document.querySelector(ID4);
-variable1.href=combine[num1];
-variable2.src=combine[num2];
-variable3.innerHTML=combine[num3];
-
-if(variable3.innerHTML!=="undefined"){
- variable4.setAttribute("class", "current_story");
-   }  
-}
-function store_cookies(){ 
-string=combine[0]+","+combine[1]+","+combine[2]+","+combine[3]+","+combine[4]+","+combine[5]+","+combine[6]+","+combine[7]+","+combine[8]+","+combine[9]+","+combine[10]+","+combine[11]+","+combine[12]+","+combine[13]+","+combine[14]+","+combine[15]+","+combine[16]+","+combine[17];  document.cookie="page_Cookies="+string+"; max-age=2592000; path=/";
-}
-
-var count=combine.length;
-
-switch(count){
-    case 3: 
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-    break;
-    case 6:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-    break;
-    case 9:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5); 
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-    break;
-    case 12:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8); 
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);  
-break;
-    case 15:   
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11); 
-update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14); 
-break;
-    case 18:
-update_element_properties("#link1", "#img1", "#link1", "#div1", 0, 1, 2);
-update_element_properties("#link2", "#img2", "#link2", "#div2", 3, 4, 5);
-update_element_properties("#link3", "#img3", "#link3", "#div3", 6, 7, 8);
-update_element_properties("#link4", "#img4", "#link4", "#div4", 9, 10, 11);
-update_element_properties("#link5", "#img5", "#link5", "#div5", 12, 13, 14);
-update_element_properties("#link6", "#img6", "#link6", "#div6", 15, 16, 17);
-break;
-case 21:
-alert("combine is 21");
-break;
-case 24:
-alert("combine is 24");
-break;
-case 27:
-alert("combine is 27");
-break;
-case 30:
-alert("combine is 30");
-break;
-case 33:
-alert("combine is 33");
-break;
-}
-store_cookies();
-
-alert(combine);
-alert(document.cookie);
-
-</script>
+<script type="text/javascript" src="/js/cookie_jar.js"></script>
 <script type="text/javascript" src="/js/email_register.js"></script>
 <script type="text/javascript" src="/js/change_page.js"></script>
 
